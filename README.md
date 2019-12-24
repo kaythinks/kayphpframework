@@ -4,7 +4,8 @@ A light weight PHP Framework that get's the Job done.
 
 # Starting
 
-		Run php - S localhost:7777 to start the server and enjoy yourself
+		Run the following to start the server and enjoy application
+		~ php - S localhost:7777 
 		~ composer install 
 		~ composer dump-autoload
 
