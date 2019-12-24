@@ -2,6 +2,10 @@
 
 A light weight PHP Framework that get's the Job done.
 
+# Installation
+
+Run  ~~  composer create-project kaythinks/kayphpframework mywebproject
+
 # Starting
 
 		Run the following to start the server and enjoy application
