@@ -1,6 +1,6 @@
 # KayPHP Framework
 
-A light weight PHP Framework that get's the Job done.
+A light weight PHP MVC Framework that get's the Job done.
 
 # Installation
 
