@@ -50,7 +50,7 @@ Router::get('/dbquery-all',function(){
 
 // Calling a closure via the router
 Router::get('/test-alone',function(){
-
+	kayphp();
 	echo "it works !";
 });
 

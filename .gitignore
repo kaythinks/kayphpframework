@@ -1,2 +1,4 @@
 /vendor
 /app/Config/Env.php
+error.log
+/app/Systems/logs/error.log
