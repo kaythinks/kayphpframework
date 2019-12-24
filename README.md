@@ -4,7 +4,7 @@ A light weight PHP Framework that get's the Job done.
 
 # Installation
 
-Run  ~~  composer create-project kaythinks/kayphpframework mywebproject
+Run  ~~  composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 
 # Starting
 
