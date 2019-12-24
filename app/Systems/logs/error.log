@@ -1,2 +1,0 @@
- # Tuesday 24th of December 2019 08:55:10 PM :- This Error' syntax error, unexpected 'echo' (T_ECHO) ' with status code 0 occured on line 55 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/index.php(3): require()
-#1 {main}!
