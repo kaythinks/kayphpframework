@@ -12,6 +12,7 @@ Run  ~~  composer create-project --prefer-dist kaythinks/kayphpframework mywebpr
 		~ php - S localhost:7777 
 		~ composer install 
 		~ composer dump-autoload
+		~ Change the EnvExample.php file to Env.php
 
 # Testing
     Run in the root folder :
