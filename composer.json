@@ -1,5 +1,7 @@
 {
     "name": "kaythinks/kayphpframework",
+    "keywords": ["kayphpframework", "laravel"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Odole Kayode",
@@ -7,6 +9,7 @@
         }
     ],
     "require": {
+        "php": "^7.0",
         "kaythinks/eazycurl": "dev-master",
         "kaythinks/goodthoughts": "dev-master",
         "kaythinks/worldtime": "dev-master",
@@ -21,7 +24,7 @@
 	        "App\\": "app/",
             "Tests\\UnitTesting\\":"Tests/"
 	    },
-        "files": ["app/Systems/Helpers.php"]
+        "files": ["app/Systems/Helpers.php","Helpers.php"]
 	},
     "scripts": {
         "migrate tables": "php app/Systems/Migration.php",
@@ -30,6 +33,7 @@
         "queue mails": "php app/Systems/Queues/MailQueueProcessor.php"
     },
     "minimum-stability":"dev",
+    "prefer-stable": true,
     "require-dev": {
         "phpunit/phpunit": "^7"
     }
