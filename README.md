@@ -1,6 +1,7 @@
 # KayPHP Framework
 
 A light weight PHP MVC Framework that get's the Job done.
+![KayPHP Logo](https://raw.githubusercontent.com/kaythinks/kayphpframework/master/public/kayphplogo.png)
 
 # Installation
 
