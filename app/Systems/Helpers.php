@@ -24,10 +24,10 @@ if (!function_exists(csrf_token)) {
 	}
 }
 
-if (!function_exists(test)) {
-	function testit()
+if (!function_exists(testit)) {
+	function testit($str)
 	{
-		echo "yeah";
+		echo "yeah $str";
 	}
 }
 
@@ -82,6 +82,42 @@ if (!function_exists(is_api)) {
 		}else{
 			return false;
 		}
+	}
+}
+
+if (!function_exists(exception_handler)) {
+	function exception_handler($e) {
+  		error_log(" # ".date('l jS \of F Y h:i:s A')." :-This Error ' ".$e->getMessage()." ' with status code " . $e->getCode() . " occured on line ". $e->getLine() ." of file". $e->getFile()." STACKTRACE ".$e->getTraceAsString()."!\r\n", 3, 'error.log');
+		error_log(" # ".date('l jS \of F Y h:i:s A')." :- This Error' ".$e->getMessage()." ' with status code " . $e->getCode() . " occured on line ". $e->getLine() ." of file". $e->getFile()." STACKTRACE ".$e->getTraceAsString()."!\r\n", 3, 'app/Systems/logs/error.log');
+
+		setcookie('error', $e->getMessage() ." on Line ". $e->getLine()." of ". $e->getFile(), time() + (1), "/"); 
+
+		readfile('app/views/errors/500.php');
+	}
+}
+
+if (!function_exists(fatal_handler)) {
+	function fatal_handler() {
+		//Report only fatal or Parse Error or User Error
+		error_reporting(E_ERROR | E_PARSE | E_USER_ERROR);
+
+    	$error = error_get_last();
+  
+	    if( $error !== NULL && $error['type'] == 256) {
+	      $errNo   = $error["type"];
+	      $errFile = $error["file"];
+	      $errLine = $error["line"];
+	      $errMessage  = $error["message"];
+	     
+	    error_log(" # ".date('l jS \of F Y h:i:s A')." :-This Error ' ".$errMessage." ' with status type " . $errNo . " occured on line ". $errLine ." of file". $errFile."!\r\n", 3, 'error.log');
+
+	    error_log(" # ".date('l jS \of F Y h:i:s A')." :-This Error ' ".$errMessage." ' with status type " . $errNo . " occured on line ". $errLine ." of file". $errFile."!\r\n", 3, 'app/Systems/logs/error.log');
+
+		setcookie('error', $errMessage ." on Line ". $errLine." of ". $errFile, time() + (1), "/"); 
+
+		readfile('app/views/errors/500.php');
+
+	   	}
 	}
 }
 

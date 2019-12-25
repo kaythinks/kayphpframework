@@ -31,12 +31,14 @@ Router::get('/docs', 'HomeController@docs');
 
 // Calling a closure via the router and passing a query string
 Router::get('/test',function(Request $request){
+	//trigger_error("Fatal error", E_USER_ERROR);
+	//throw new Exception("Error Processing Request", 1);
 	
-	debug(new \PDOException);
+	debug(new PDOException);
 });
 
 Router::get('/dbquery',function(){
-	$query = "select * from users where id = 11 ";
+	$query = "select * from users where id = 1 ";
 	$response = (new \App\Config\Database())->rawQueryOne($query);
 	debug($response);
 });

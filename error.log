@@ -1,0 +1,154 @@
+ # Wednesday 25th of December 2019 09:29:00 AM :-This Error ' syntax error, unexpected 'Router' (T_STRING) ' with status code 0 occured on line 21 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/index.php(3): require()
+#1 {main}!
+ # Wednesday 25th of December 2019 09:29:01 AM :-This Error ' syntax error, unexpected 'Router' (T_STRING) ' with status code 0 occured on line 21 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/index.php(3): require()
+#1 {main}!
+ # Wednesday 25th of December 2019 09:29:17 AM :-This Error ' syntax error, unexpected 'Router' (T_STRING) ' with status code 0 occured on line 21 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/index.php(3): require()
+#1 {main}!
+ # Wednesday 25th of December 2019 09:29:45 AM :-This Error ' Too few arguments to function {closure}(), 0 passed in /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php on line 42 and exactly 1 expected ' with status code 0 occured on line 33 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(42): {closure}()
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(36): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(17): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 09:30:22 AM :-This Error ' syntax error, unexpected '}' ' with status code 0 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/index.php(3): require()
+#1 {main}!
+ # Wednesday 25th of December 2019 09:38:45 AM :-This Error ' Too few arguments to function {closure}(), 0 passed in /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php on line 42 and exactly 1 expected ' with status code 0 occured on line 33 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(42): {closure}()
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(35): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(20): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 09:39:14 AM :-This Error ' Too few arguments to function {closure}(), 0 passed in /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php on line 42 and exactly 1 expected ' with status code 0 occured on line 33 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(42): {closure}()
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(37): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(20): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 09:41:54 AM :-This Error ' Error Processing Request ' with status code 1 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(44): {closure}(Object(App\Systems\Request))
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(37): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(20): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 09:42:35 AM :-This Error ' Error Processing Request ' with status code 1 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(44): {closure}(Object(App\Systems\Request))
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(37): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(20): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 08:55:15 AM :-This Error ' syntax error, unexpected end of file ' with status code 0 occured on line 115 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Helpers.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/vendor/composer/autoload_real.php(56): composerRequiread60308e579940e5a13a5bfb826f64a6('e1eec457d4a1664...', '/Library/WebSer...')
+#1 /Library/WebServer/Documents/kayphpframework/vendor/autoload.php(7): ComposerAutoloaderInitad60308e579940e5a13a5bfb826f64a6::getLoader()
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(7): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 10:01:51 AM :-This Error ' Too few arguments to function {closure}(), 0 passed in /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php on line 42 and exactly 1 expected ' with status code 0 occured on line 33 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(42): {closure}()
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(37): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(23): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 10:01:52 AM :-This Error ' Too few arguments to function {closure}(), 0 passed in /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php on line 42 and exactly 1 expected ' with status code 0 occured on line 33 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(42): {closure}()
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(37): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(23): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 10:15:07 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:15:10 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:19:49 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:19:50 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:19:58 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:19:59 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:23:50 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:23:53 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:24:26 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:25:13 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:25:15 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:25:17 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:25:17 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:25:18 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:25:30 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:26:00 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:26:14 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:27:10 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:27:13 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:27:14 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:27:34 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:27:35 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:27:36 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:30:49 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 10:30:50 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 10:31:02 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 10:31:50 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 10:31:53 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 10:32:02 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 10:32:26 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 10:32:27 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 10:32:32 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 10:39:46 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:41:33 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:41:36 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:41:44 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:44:14 AM :- This route /dlfkdjf doesn't exist in your Application !
+ # Wednesday 25th of December 2019 10:44:46 AM :-This Error ' Error Processing Request ' with status code 1 occured on line 35 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(44): {closure}(Object(App\Systems\Request))
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(37): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(34): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 10:45:03 AM :-This Error ' Fatal error ' with status type 256 occured on line 36 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:58:00 AM :- This route /kfhdjhfjhd doesn't exist in your Application !
+ # Wednesday 25th of December 2019 10:58:51 AM :-This Error ' Error Processing Request ' with status code 1 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(44): {closure}(Object(App\Systems\Request))
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(37): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(23): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 10:59:39 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 10:59:40 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:01:42 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:01:46 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:01:47 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:01:48 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:02:06 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:02:13 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:02:14 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:02:15 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:02:38 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:03:10 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:03:11 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:03:14 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:03:54 AM :-This Error ' Error Processing Request ' with status code 1 occured on line 35 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(44): {closure}(Object(App\Systems\Request))
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(38): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(23): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 11:03:54 AM :-This Error ' Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/kayphpframework/Route.php:34) ' with status type 2 occured on line 93 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Helpers.php!
+ # Wednesday 25th of December 2019 11:04:57 AM :-This Error ' Error Processing Request ' with status code 1 occured on line 35 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(44): {closure}(Object(App\Systems\Request))
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(38): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(23): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 11:04:57 AM :-This Error ' Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/kayphpframework/Route.php:34) ' with status type 2 occured on line 93 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Helpers.php!
+ # Wednesday 25th of December 2019 11:04:58 AM :-This Error ' Error Processing Request ' with status code 1 occured on line 35 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(44): {closure}(Object(App\Systems\Request))
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(38): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(23): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 11:04:58 AM :-This Error ' Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/kayphpframework/Route.php:34) ' with status type 2 occured on line 93 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Helpers.php!
+ # Wednesday 25th of December 2019 11:04:59 AM :-This Error ' Error Processing Request ' with status code 1 occured on line 35 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(44): {closure}(Object(App\Systems\Request))
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(38): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(23): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 11:04:59 AM :-This Error ' Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/kayphpframework/Route.php:34) ' with status type 2 occured on line 93 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Helpers.php!
+ # Wednesday 25th of December 2019 11:05:11 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:05:12 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:05:14 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 11:05:28 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 11:05:30 AM :-This Error ' Undefined offset: 2 ' with status type 8 occured on line 308 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Router.php!
+ # Wednesday 25th of December 2019 11:06:08 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:06:16 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:06:28 AM :- This route /khjgshhgs doesn't exist in your Application !
+ # Wednesday 25th of December 2019 11:06:37 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:07:19 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:07:20 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:08:04 AM :-This Error ' Fatal error ' with status type 256 occured on line 34 of file/Library/WebServer/Documents/kayphpframework/Route.php!
+ # Wednesday 25th of December 2019 11:08:16 AM :-This Error ' Error Processing Request ' with status code 1 occured on line 35 of file/Library/WebServer/Documents/kayphpframework/Route.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(44): {closure}(Object(App\Systems\Request))
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(38): App\Systems\Router::get('/test', Object(Closure))
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(26): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Wednesday 25th of December 2019 11:12:47 AM :- This route /dashboards doesn't exist in your Application !
+ # Wednesday 25th of December 2019 11:13:30 AM :- This route /testwjwhjww doesn't exist in your Application !

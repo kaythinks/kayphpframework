@@ -6,6 +6,15 @@ try {
 
 	require __DIR__ .'/../vendor/autoload.php';
 
+	//Set Error Type
+	error_reporting(E_ERROR | E_PARSE);
+
+	//Set the exception Handler method
+	set_exception_handler('exception_handler');
+
+	//Set Fatal Error Handler Method
+	register_shutdown_function('fatal_handler');
+
 	//Checking the session time
 	session_time_counter();
 
