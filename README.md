@@ -1,7 +1,8 @@
 # KayPHP Framework
 
-A light weight PHP MVC Framework that get's the Job done.
+A light weight PHP MVC Framework that get's the Job done.\r\n
 ![GitHub](https://img.shields.io/badge/SEMVER-1.0.1-brightgreen)
+[![GitHub license](https://img.shields.io/badge/LICENSE-MIT-blue)](https://github.com/kaythinks/kayphpframework/blob/master/LICENSE.md)
 ![KayPHP Logo](https://raw.githubusercontent.com/kaythinks/kayphpframework/master/public/kayphplogo.png)
 
 # Installation
