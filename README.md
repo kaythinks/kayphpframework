@@ -4,7 +4,7 @@
 
 # KayPHP Framework
 
-![KayPHP Logo](https://raw.githubusercontent.com/kaythinks/kayphpframework/master/public/kayphplogo.png | width=100)
+![KayPHP Logo](https://raw.githubusercontent.com/kaythinks/kayphpframework/master/public/kayphplogo.png|width=100)
 
 
 A light weight PHP MVC Framework that get's the Job done.
@@ -36,6 +36,5 @@ $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 
 # Supports
 
-   KayPHP has out-of-the-box support for;
-REDIS
 ![Redis](https://redis.io/images/redis-white.png)
+![Cloudinary](https://cloudinary-res.cloudinary.com/image/upload/v1538583988/cloudinary_logo_for_white_bg.svg)
