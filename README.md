@@ -35,6 +35,13 @@ $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
     composer seed tables    
 
 # Supports
-
-<img src="https://redis.io/images/redis-white.png" width="300" title="Redis">
-<img src="https://cloudinary-res.cloudinary.com/image/upload/v1538583988/cloudinary_logo_for_white_bg.svg" width="300"  title="Cloudinary">
+<p>Redis Caching</p>
+<img src="https://redis.io/images/redis-white.png" width="200" title="Redis">
+<p>Cloudinary File Upload</p>
+<img src="https://cloudinary-res.cloudinary.com/image/upload/v1538583988/cloudinary_logo_for_white_bg.svg" width="200"  title="Cloudinary">
+<P>RabbitMQ Queueing</P>
+<img src="https://www.rabbitmq.com/img/RabbitMQ-logo.svg" width="200" title="RabbitMQ">
+<p>PHPUnit Testing</p>
+<img src="https://phpunit.de/img/phpunit.png" width="200" title="PHPUnit">
+<p>PHP Mailer</p>
+<img src="https://camo.githubusercontent.com/0d858d6dac4d3f6fab7d42de2c09d32ee2de9c5b/68747470733a2f2f7261772e6769746875622e636f6d2f5048504d61696c65722f5048504d61696c65722f6d61737465722f6578616d706c65732f696d616765732f7068706d61696c65722e706e67" width="200" title="PHPMailer">
