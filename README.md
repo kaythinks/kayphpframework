@@ -37,4 +37,5 @@ $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 # Supports
 
    KayPHP has out-of-the-box support for;
-![Redis](https://redis.io/images/redis-white.png | width=100)
+
+![Redis](https://redis.io/images/redis-white.png)
