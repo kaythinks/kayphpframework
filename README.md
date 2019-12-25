@@ -15,7 +15,7 @@ Run
 ```
 $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 ```
-# Starting
+# STARTING
 
 		Run the following to start the server and enjoy application
 		~ php - S localhost:7777 
@@ -23,18 +23,22 @@ $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 		~ composer dump-autoload
 		~ Change the EnvExample.php file to Env.php
 
-# Testing
+# TESTING
     Run in the root folder :
     vendor/bin/phpunit Tests/ExampleTest.php
 
-# Commands
+# COMMANDS
     To migrate tables, run :
     composer migrate tables
 
     To seed data, run :
     composer seed tables    
 
-# Supports
+    To run queues, run :
+    composer queue mails
+    NOTE: You are advised to run "php app/Systems/Queues/MailQueueProcessor.php" if you are trying to queue multiple processes as composer times out after some times.
+
+# SUPPORTS
 <span>
 <h1>Redis Caching</h1>
 <img src="https://redis.io/images/redis-white.png" width="200" title="Redis">
