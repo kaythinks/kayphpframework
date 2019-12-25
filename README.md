@@ -1,8 +1,9 @@
-# KayPHP Framework
-
 ![GitHub](https://img.shields.io/badge/SEMVER-1.0.1-brightgreen)
 ![GitHub](https://img.shields.io/badge/code%20coverage-90%25-orange)
 [![GitHub license](https://img.shields.io/badge/LICENSE-MIT-blue)](https://github.com/kaythinks/kayphpframework/blob/master/LICENSE.md)
+
+# KayPHP Framework
+
 ![KayPHP Logo](https://raw.githubusercontent.com/kaythinks/kayphpframework/master/public/kayphplogo.png)
 
 
