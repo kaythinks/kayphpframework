@@ -4,7 +4,7 @@
 
 # KayPHP Framework
 
-![KayPHP Logo](https://raw.githubusercontent.com/kaythinks/kayphpframework/master/public/kayphplogo.png)
+![KayPHP Logo](https://raw.githubusercontent.com/kaythinks/kayphpframework/master/public/kayphplogo.png | width=100)
 
 
 A light weight PHP MVC Framework that get's the Job done.
@@ -33,3 +33,8 @@ $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 
     To seed data, run :
     composer seed tables    
+
+# Supports
+
+   KayPHP has out-of-the-box support for;
+![Redis](https://redis.io/images/redis-white.png | width=100)
