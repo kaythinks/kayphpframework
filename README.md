@@ -1,11 +1,12 @@
 # KayPHP Framework
 
 A light weight PHP MVC Framework that get's the Job done.
-![GitHub](https://img.shields.io/github/mit/kaythinks/kayphpframework)
+![GitHub](https://img.shields.io/badge/SEMVER-1.0.1-brightgreen)
 ![KayPHP Logo](https://raw.githubusercontent.com/kaythinks/kayphpframework/master/public/kayphplogo.png)
 
 # Installation
 
+Run
 ```
 $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 ```
