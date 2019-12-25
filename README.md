@@ -6,8 +6,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/kaythinks/kayphpframework/master/public/kayphplogo.png" width="256" title="KayPHP">
 </p>
-![KayPHP Logo](https://raw.githubusercontent.com/kaythinks/kayphpframework/master/public/kayphplogo.png)
-
 
 A light weight PHP MVC Framework that get's the Job done.
 
@@ -38,7 +36,5 @@ $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 
 # Supports
 
-![Redis](https://redis.io/images/redis-white.png)
-![Cloudinary](https://cloudinary-res.cloudinary.com/image/upload/v1538583988/cloudinary_logo_for_white_bg.svg)
-<img src="https://redis.io/images/redis-white.png" width="100" height="256" title="Redis">
-<img src="https://cloudinary-res.cloudinary.com/image/upload/v1538583988/cloudinary_logo_for_white_bg.svg" width="100" height="256" title="Cloudinary">
+<img src="https://redis.io/images/redis-white.png" width="300" title="Redis">
+<img src="https://cloudinary-res.cloudinary.com/image/upload/v1538583988/cloudinary_logo_for_white_bg.svg" width="300"  title="Cloudinary">
