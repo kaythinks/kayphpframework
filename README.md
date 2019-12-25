@@ -36,7 +36,7 @@ $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 
     To run queues, run :
     composer queue mails
-    NOTE: You are advised to run "php app/Systems/Queues/MailQueueProcessor.php" if you are trying to queue multiple processes as composer times out after some times.
+    NOTE: You are advised to run "php app/Systems/Queues/MailQueueProcessor.php" if you are trying to queue multiple processes as composer times out after some time.
 
 # SUPPORTS
 <span>
