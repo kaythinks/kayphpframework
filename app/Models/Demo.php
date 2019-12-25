@@ -13,7 +13,7 @@ class Demo extends Model{
 		"first_name" => "string",
 		"last_name" => "string",
 		"email" => "string:unique",
-		"price" => "float:unique"
+		"price" => "float"
 	];
 
 }

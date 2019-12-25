@@ -50,7 +50,7 @@ class Controller{
 		//Call the middleware method
 		Middleware::$method();
 	}
-
+	
 	public function redirect(string $url)
 	{
 		//Redirect to the $url

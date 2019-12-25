@@ -21,7 +21,7 @@ $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 		~ php - S localhost:7777 
 		~ composer install 
 		~ composer dump-autoload
-		~ Change the EnvExample.php file to Env.php
+		~ Change the EnvExample.php file to Env.php and change the class name to Env
 
 # TESTING
     Run in the root folder :

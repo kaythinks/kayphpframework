@@ -27,6 +27,7 @@ class RegisterController extends Controller{
 	 * Creating an Authenticated User
 	 * 
 	 * @param  Request $request 
+	 * @throws\Exception
 	 * @return Response         
 	 */
 	public function saveData(Request $request){
@@ -80,25 +81,4 @@ class RegisterController extends Controller{
 			return $this->redirect('/register');
 		}
 	}
-
-	public function getData(){
-
-	    User::all();	
-	}
-
-	public function getsingleData(Request $request){
-		$id = $request->get('id');
-	    User::find($id);	
-	}
-
-	public function updateData(Request $request){
-
-		User::update($request);
-	}
-
-	public function deleteData(Request $request){
-
-		User::delete($request);
-	}
-
 }

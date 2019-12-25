@@ -65,7 +65,6 @@ class File{
 		    } else {
 
 		    	throw new Exception("Sorry, there was an error uploading your file.", 500);
-		       // echo "Sorry, there was an error uploading your file."; die();
 		    }
 		}
 	}

@@ -37,7 +37,7 @@
 
 
 
-
+			"{{ quote }}"
 
 			<p> - Gives you coding freedom -- code as you like !. </p>
 		<span> A minimalistic framework , for real PHP developers, by real PHP developers. </span><br>

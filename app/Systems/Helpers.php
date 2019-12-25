@@ -19,7 +19,7 @@ if (!function_exists(csrf_token)) {
 			
 		$token = md5(uniqid(rand(), true));
 		$_SESSION['csrf'] = $token;
-		//$_REQUEST['csrf_token'] = $token;
+		
 		return $token;
 	}
 }

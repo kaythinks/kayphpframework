@@ -15,8 +15,6 @@ class Router{
 	 */
 	public static function get(string $url,  $controllerDatas){
 
-		//$serverPath = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
-
 		$server = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
 
 		$serverPath = strpos($server, "?") ? substr($server, 0, strpos($server, "?")) : $server; 
@@ -74,7 +72,6 @@ class Router{
 	 */
 	public static function post(string $url,  $controllerDatas){
 
-		//$serverPath = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
 		$server = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
 
 		$serverPath = strpos($server, "?") ? substr($server, 0, strpos($server, "?")) : $server; 
@@ -129,7 +126,6 @@ class Router{
 	 */
 	public static function put(string $url,  $controllerDatas){
 
-		//$serverPath = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
 		$serverPath = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
 
 		$serverPath = strpos($server, "?") ? substr($server, 0, strpos($server, "?")) : $server; 
@@ -185,7 +181,6 @@ class Router{
 	 */
 	public static function patch(string $url,  $controllerDatas){
 
-		//$serverPath = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
 		$serverPath = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
 
 		$serverPath = strpos($server, "?") ? substr($server, 0, strpos($server, "?")) : $server; 
@@ -241,7 +236,6 @@ class Router{
 	 */
 	public static function delete(string $url,  $controllerDatas){
 
-		//$serverPath = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
 		$serverPath = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
 
 		$serverPath = strpos($server, "?") ? substr($server, 0, strpos($server, "?")) : $server; 
@@ -297,7 +291,7 @@ class Router{
 	 */
 	public static function compareArray(string $url)
 	{
-		//$server = (explode("/",$_SERVER['PATH_INFO']));
+
 		$server = (explode("/",$_SERVER['REQUEST_URI']));
 		$url = (explode("/",$url));
 

@@ -49,8 +49,6 @@ class Database{
 	 		$this->dbh->exec($sql);
 
 	 		echo "Table ". $model->table." created successfully !\r\n";
-
-	 		//$this->closeConnection();
 		}
 		catch(PDOException $e)
 		{
@@ -144,8 +142,6 @@ class Database{
 		catch (PDOException $e)
 		{
 			throw new Exception($e->getMessage(), $e->getCode());
-			
-		    //echo "There is some problem in connection: " . $e->getMessage();
 		}
 
 	}
@@ -185,8 +181,6 @@ class Database{
 		    $stmt->execute($request->all());
 
 		    echo " Data created successfully ! \r\n";
-
-		    //$this->closeConnection();
 		}
 		catch (PDOException $e)
 		{
@@ -204,10 +198,12 @@ class Database{
 			$sql = "SELECT * FROM ".$model->table;
 
         	$data = $this->dbh->query($sql);
+
+        	$obj = $data->fetchAll(PDO::FETCH_ASSOC);
         	
         	$this->closeConnection();
 
-        	return $data->fetchAll(PDO::FETCH_ASSOC);
+        	return $obj;
         	
 		}catch(PDOException $e){
 
@@ -228,10 +224,9 @@ class Database{
         	
         	$obj = $data->fetch(PDO::FETCH_ASSOC);
 
-        	//if(!$obj) throw new PDOException("This does not exist in the Database!");
-        	if(!$obj) return null;
-
         	$this->closeConnection();
+
+        	if(!$obj) return null;
 
         	return $obj;
 
@@ -253,10 +248,10 @@ class Database{
         	$data = $this->dbh->query($sql);
         	
         	$obj = $data->fetch();
-
-        	//if(!$obj) throw new PDOException("This does not exist in the Database!");
         	
         	$this->closeConnection();
+
+        	if(!$obj) return null;
 
         	return $obj;
 
@@ -278,10 +273,10 @@ class Database{
         	$data = $this->dbh->query($sql);
 
         	$obj = $data->fetch();
-
-        	if(!$obj) throw new PDOException("ID does not exist in the Database!", 404);
         	
         	$this->closeConnection();
+
+        	if(!$obj) throw new PDOException("ID does not exist in the Database!", 404);
 
         	return $obj;
 
@@ -332,8 +327,6 @@ class Database{
 			
 			$this->dbh->prepare($sql)->execute($request->all());
 
-			//echo "Record updated successfully";
-
 			$this->closeConnection();
 
 			return true;
@@ -364,8 +357,6 @@ class Database{
 			
 			$this->dbh->prepare($sql)->execute();
 
-			//echo "Record deleted successfully !";
-
 			$this->closeConnection();
 
 			return true;
@@ -386,11 +377,10 @@ class Database{
 			$sth->execute();
 
 			$obj = $sth->fetch(PDO::FETCH_ASSOC);
-
-			//if(!$obj ) throw new PDOException("Null Response Gotten ,Check your Query Again!", 500);
-			if(!$obj) return null;
 			
 			$this->closeConnection();
+
+			if(!$obj) return null;
 
 			return $obj;
 
@@ -411,10 +401,9 @@ class Database{
 
 			$obj = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-			//f(!$obj ) throw new PDOException("Null Response Gotten ,Check your Query Again!", 500);
-			if(!$obj) return null;
-
 			$this->closeConnection();
+
+			if(!$obj) return null;
 
 			return $obj;
 

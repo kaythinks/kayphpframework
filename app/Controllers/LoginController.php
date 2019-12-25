@@ -16,6 +16,12 @@ class LoginController extends Controller{
 		parent::__construct();
 	}
 
+	/**
+	 * This method is for logging users in
+	 * 
+	 * @param  Request $request 
+	 * @return Response
+	 */
 	public function login(Request $request){
 
 		//Validating input request
@@ -35,13 +41,10 @@ class LoginController extends Controller{
 			Session::put('error','Invalid Login or Password !');
 			return $this->redirect('/login');
 		}
-		
 		//Pass data to the session
-		
 		Session::put('data',$data);
 
 		return $this->redirect('/dashboard');
-		
 	}
 	
 }

@@ -29,7 +29,8 @@ class HomeController extends Controller{
 	 */
 	public function index(){
 		
-		echo $this->twig->render('welcome.php');
+		$quote = Goodthoughts::generateThought();
+		echo $this->twig->render('welcome.php', ["quote" => $quote ]);
 	}
 
 	/**
@@ -77,13 +78,11 @@ class HomeController extends Controller{
 	 */
 	public function forgotPassword(){
 
+		if (!Session::exists('error')) $error = false;
+		
 		if (Session::exists('error')) {
-
 			$error = Session::get('error');
-			//Unset the session
 			Session::destroy('error');
-		}else{
-			$error = false;
 		}
 
 		if (!Session::exists('info')) $info = false;
@@ -96,6 +95,12 @@ class HomeController extends Controller{
 		echo $this->twig->render('forgotpassword.php', ['error' => $error , 'info' => $info ]);
 	}
 
+	/**
+	 * This method is for recovering forgotten passwords
+	 * 
+	 * @param  Request $request 
+	 * @return Response
+	 */
 	public function postForgotPassword(Request $request)
 	{
 		$data = User::where('email',$request->get('email'));
@@ -132,8 +137,9 @@ class HomeController extends Controller{
 	}
 
 	/**
-	 * This method is for the login page view
+	 * This method is an API End point
 	 * 
+	 * @throws \Exception 
 	 * @return JSON Response
 	 */
 	public function getResponse(){
@@ -156,24 +162,9 @@ class HomeController extends Controller{
 		}
 	}
 
-	public function getData(Request $request)
-	{
-		echo $request::get('ok');
-	}
-
-	public function getRequest(Request $request)
-	{
-		echo $request::get('name');
-	}
-
 	public function docs()
 	{
 		echo $this->twig->render('docs.php');
-	}
-
-	public function docsRequest(Request $request)
-	{
-		debug($request->all());
 	}
 
 	/**
@@ -193,6 +184,12 @@ class HomeController extends Controller{
 		return $this->redirect('/');
 	}
 
+	/**
+	 * This method is for queueing email messages
+	 * 
+	 * @param  Request $request 
+	 * @return Response
+	 */
 	public function queueEmails(Request $request)
 	{
 		$email = $request->get('email');
@@ -202,16 +199,26 @@ class HomeController extends Controller{
 			MailQueueClient::attach($email);
 		}
 		
-		debug($request->all());
+		echo "done";
 	}
 
+	/**
+	 * This method is for getting a value in Redis
+	 * 
+	 * @return Response
+	 */
 	public function getRedisValue()
 	{
-		$value = (new Redis())->getValue('Kay');
+		$value = (new Redis())->getValue('KayPHP');
 
 		echo $value;
 	}
 
+	/**
+	 * This method is for getting a value in Redis
+	 *
+	 * @return Response
+	 */
 	public function setRedisValue()
 	{
 		$value = (new Redis())->setValue('Kay', 'Freaking Genius');

@@ -3,7 +3,7 @@
 namespace App\Systems;
 
 /**
- * This utility class contains different methods which serve as middlewares for different use cases
+ * This utility class contains different methods which serve as middlewares for different use cases. Add your own middleware methods
  */
 class Middleware{
 

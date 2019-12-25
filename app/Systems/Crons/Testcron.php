@@ -16,7 +16,7 @@ class Testcron{
 	public function run()
 	{
 		//Write your logic here
-		$recipientEmail = "kaythinks".uniqid()."@gmail.com";
+		$recipientEmail = "kaythinks@gmail.com";
 		$recipientFullName = "Kay Odole";
 		$subject = "This is a KayPHP Demo Email";
 		$body = file_get_contents('app/views/email/demo.php');
