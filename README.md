@@ -11,10 +11,16 @@ A light weight PHP MVC Framework that get's the Job done.
 
 # Installation
 
-Run
+Run 
 ```
 $ composer create-project --prefer-dist kaythinks/kayphpframework mywebproject
 ```
+
+Or run 
+```
+$ git clone https://github.com/kaythinks/kayphpframework.git mywebproject
+```
+
 # STARTING
 
 		Run the following to start the server and enjoy application
