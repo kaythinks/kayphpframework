@@ -17,10 +17,10 @@ Router::get('/docs','HomeController@docs');
 Router::get('/forgotpassword','HomeController@forgotPassword');
 
 //Profile Page
-Router::get('/dashboard', 'dashboardController@home');
-Router::get('/updateprofile/{id}','dashboardController@getSingleProfile');
-Router::get('/deleteprofile','dashboardController@deleteProfile');
-Router::get('/logout', 'dashboardController@logout');
+Router::get('/dashboard', 'DashboardController@home');
+Router::get('/updateprofile/{id}','DashboardController@getSingleProfile');
+Router::get('/deleteprofile','DashboardController@deleteProfile');
+Router::get('/logout', 'DashboardController@logout');
 
 
 
@@ -36,4 +36,4 @@ Router::post('/savedata','RegisterController@saveData');
 Router::post('/forgotpassword','HomeController@postForgotPassword');
 
 //Profile Page
-Router::post('/updateprofile','dashboardController@updateProfile');
+Router::post('/updateprofile','DashboardController@updateProfile');
