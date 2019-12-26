@@ -15,8 +15,6 @@ use Exception;
 
 
 class RegisterController extends Controller{
-	
-	protected $db;
 
 	public function __construct()
 	{

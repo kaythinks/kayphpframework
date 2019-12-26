@@ -72,7 +72,7 @@ class HomeController extends Controller{
 	}
 
 	/**
-	 *  This method is for the forgot page view
+	 *  This method is for the forgot password page view
 	 * 
 	 * @return Response
 	 */
@@ -162,6 +162,11 @@ class HomeController extends Controller{
 		}
 	}
 
+	/**
+	 * This method is for the docs page view
+	 * 
+	 * @return Response
+	 */
 	public function docs()
 	{
 		echo $this->twig->render('docs.php');
@@ -203,7 +208,7 @@ class HomeController extends Controller{
 	}
 
 	/**
-	 * This method is for getting a value in Redis
+	 * This method is for getting a value in the Redis Database
 	 * 
 	 * @return Response
 	 */
@@ -215,7 +220,7 @@ class HomeController extends Controller{
 	}
 
 	/**
-	 * This method is for getting a value in Redis
+	 * This method is for setting a value in the Redis Database
 	 *
 	 * @return Response
 	 */
