@@ -11,6 +11,7 @@ Router::get('/','HomeController@index');
 Router::get('/login','HomeController@login');
 Router::get('/register','HomeController@register');
 Router::get('/api/checkpoint','HomeController@getResponse');
+Router::get('/docs','HomeController@docs');
 
 //Forgot Password
 Router::get('/forgotpassword','HomeController@forgotPassword');
