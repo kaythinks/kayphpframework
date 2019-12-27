@@ -1,2 +1,4 @@
 /vendor
 /app/Config/Env.php
+.DS_Store
+.DS_Store?
