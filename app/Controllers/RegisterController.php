@@ -42,10 +42,10 @@ class RegisterController extends Controller{
 
 		try{
 			//If you want to save the file in the local server
-			//$picPath = File::upload($request->get('picture'));
+			$picPath = File::upload($request->get('picture'));
 
 			//If you want to save the file on Cloudinary
-			$picPath = (new CloudinaryClient())->uploadFile($request->get('picture')['tmp_name']);
+			//$picPath = (new CloudinaryClient())->uploadFile($request->get('picture')['tmp_name']);
 
 			//Update the Hashing method
 			$request->put('password',Hash::make($request->get('password')));

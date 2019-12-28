@@ -1,6 +1,0 @@
- # Thursday 26th of December 2019 11:47:39 AM :- This Error' Attribute 'data 'does not exist in this Request object ! ' with status code 1 occured on line 16 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Session.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Controllers/dashboardController.php(27): App\Systems\Session::get('data')
-#1 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(56): App\Controllers\DashboardController->home()
-#2 /Library/WebServer/Documents/kayphpframework/Route.php(19): App\Systems\Router::get('/dashboard', 'dashboardContro...')
-#3 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(26): require('/Library/WebSer...')
-#4 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
-#5 {main}!
