@@ -1,3 +1,4 @@
 /vendor
 /app/Config/Env.php
 .DS_Store
+/app/.DS_Store
