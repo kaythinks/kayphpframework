@@ -141,7 +141,8 @@ class Database{
 		}
 		catch (PDOException $e)
 		{
-			throw new Exception($e->getMessage(), $e->getCode());
+			Logger::error($e);
+		    echo "There is some problem in connection: " . $e->getMessage();
 		}
 
 	}
