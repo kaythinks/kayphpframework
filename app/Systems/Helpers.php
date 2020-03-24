@@ -2,7 +2,7 @@
 /* 
 	Write helper functions kayPHP
 */
-if (!function_exists(debug)) {
+if (!function_exists('debug')) {
 	function debug($data)
 	{
 		echo '<pre>',print_r($data,1),'</pre>';
@@ -10,7 +10,7 @@ if (!function_exists(debug)) {
 	}
 }
 
-if (!function_exists(csrf_token)) {
+if (!function_exists('csrf_token')) {
 	function csrf_token()
 	{
 		if (isset($_SESSION['csrf'])){
@@ -24,14 +24,14 @@ if (!function_exists(csrf_token)) {
 	}
 }
 
-if (!function_exists(testit)) {
+if (!function_exists('testit')) {
 	function testit($str)
 	{
 		echo "yeah $str";
 	}
 }
 
-if (!function_exists(session_time_counter)) {
+if (!function_exists('session_time_counter')) {
 	function session_time_counter()
 	{
 		$time = $_SERVER['REQUEST_TIME'];
@@ -49,7 +49,7 @@ if (!function_exists(session_time_counter)) {
 	}
 }
 
-if (!function_exists(app_settings)) {
+if (!function_exists('app_settings')) {
 	function app_settings()
 	{
 		
@@ -59,7 +59,7 @@ if (!function_exists(app_settings)) {
 	}
 }
 
-if (!function_exists(enable_cors)) {
+if (!function_exists('enable_cors')) {
 	function enable_cors()
 	{
 		header('Access-Control-Allow-Origin: *');
@@ -72,7 +72,7 @@ if (!function_exists(enable_cors)) {
 	}
 }
 
-if (!function_exists(is_api)) {
+if (!function_exists('is_api')) {
 	function is_api()
 	{
 		$server = (explode("/",$_SERVER['REQUEST_URI']));
@@ -85,7 +85,16 @@ if (!function_exists(is_api)) {
 	}
 }
 
-if (!function_exists(exception_handler)) {
+if (!function_exists('get_interface_bindings')) {
+	function get_interface_bindings(string $name)
+	{
+		$binding = \App\Systems\DependencyInjectionContainer\Container::$bindings;
+	
+		return isset($binding[$name]) ? $binding[$name] : false ;
+	}
+}
+
+if (!function_exists('exception_handler')) {
 	function exception_handler($e) {
   		error_log(" # ".date('l jS \of F Y h:i:s A')." :-This Error ' ".$e->getMessage()." ' with status code " . $e->getCode() . " occured on line ". $e->getLine() ." of file". $e->getFile()." STACKTRACE ".$e->getTraceAsString()."!\r\n", 3, 'error.log');
 		error_log(" # ".date('l jS \of F Y h:i:s A')." :- This Error' ".$e->getMessage()." ' with status code " . $e->getCode() . " occured on line ". $e->getLine() ." of file". $e->getFile()." STACKTRACE ".$e->getTraceAsString()."!\r\n", 3, 'app/Systems/logs/error.log');
@@ -96,7 +105,7 @@ if (!function_exists(exception_handler)) {
 	}
 }
 
-if (!function_exists(fatal_handler)) {
+if (!function_exists('fatal_handler')) {
 	function fatal_handler() {
 		//Report only fatal or Parse Error or User Error
 		error_reporting(E_ERROR | E_PARSE | E_USER_ERROR);

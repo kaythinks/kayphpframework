@@ -14,7 +14,7 @@ class Router{
 	 * @return Object                  
 	 */
 	public static function get(string $url,  $controllerDatas){
-
+	
 		$server = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
 
 		$serverPath = strpos($server, "?") ? substr($server, 0, strpos($server, "?")) : $server; 
@@ -35,11 +35,29 @@ class Router{
 			
 			/* Dynamic Routing */
 
+			//Check if it's a closure
 			if (is_object($controllerDatas)) {
+
+				$checkMethodArgs = new \ReflectionFunction($controllerDatas);
+		    	
+			    //Check if the closure has arguments or not
+				if( empty($checkMethodArgs->getParameters()) ) return $controllerDatas();
+
+				//Loop through the arguments parameters
+				foreach ($checkMethodArgs->getParameters() as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$initialize = $arg->getClass()->name;
+						
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+							$initialize = get_interface_bindings($param);
+						}
+
+						$instanceArray[] = new $initialize();
+					}
+				}
 				
-				if(!$_GET) return $controllerDatas();
-				
-				return $controllerDatas(new Request()); 
+				return $checkMethodArgs->invoke(...$instanceArray);
 			}
 
 			$controllerData = (explode("@",$controllerDatas));
@@ -47,15 +65,56 @@ class Router{
 			
 			$filePath = "\App\Controllers".$controllerName;
 
-			$obj = new $filePath();
+			//Class construct args
+			$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+
+			if(empty($class_constructor_args) ){
+
+				$obj = new $filePath();
+
+			}else{
+
+				foreach ($class_constructor_args as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$param = $arg->getClass()->name;
+
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($param))->isInstantiable() ) {
+							$param = get_interface_bindings($param);
+						}
+
+						$args[] = new $param();
+					}
+				}
+				
+				$obj = new $filePath(...$args);
+			} 
 			
-			$class_methods = get_class_methods(new $filePath());
+			$class_methods = get_class_methods($obj);
 
 			foreach ($class_methods as $method_name) {
 			    if ($method_name === $controllerData[1]) {
-			    	if(!$_GET) return $obj->$method_name();
-				
-					return $obj->$method_name(new Request());
+			    	
+			    	$checkMethodArgs = new \ReflectionMethod($filePath, $controllerData[1]);
+
+					//Check if the method has arguments or not
+		    		if(empty($checkMethodArgs->getParameters())) return $obj->$method_name();
+
+		    		//Loop through the arguments parameters
+					foreach ($checkMethodArgs->getParameters() as $arg) {
+						if ( isset($arg->getClass()->name) ) {
+							$initialize = $arg->getClass()->name;
+
+							//Check if it's an interface
+							if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+								$initialize = get_interface_bindings($param);
+							}
+
+							$instanceArray[] = new $initialize();
+						}
+					}
+					
+					return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 			    }
 			}
 
@@ -90,10 +149,31 @@ class Router{
 				return self::checkDynamicRoute($urlArray[2], $serverPathArray[2], $controllerDatas);
 			}
 			
+			/* Dynamic Routing */
+
+			//Check if it's a closure
 			if (is_object($controllerDatas)) {
-				if(!$_POST) return $controllerDatas();
+
+				$checkMethodArgs = new \ReflectionFunction($controllerDatas);
+		    	
+			    //Check if the closure has arguments or not
+				if( empty($checkMethodArgs->getParameters()) ) return $controllerDatas();
+
+				//Loop through the arguments parameters
+				foreach ($checkMethodArgs->getParameters() as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$initialize = $arg->getClass()->name;
+						
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+							$initialize = get_interface_bindings($param);
+						}
+
+						$instanceArray[] = new $initialize();
+					}
+				}
 				
-				return $controllerDatas(new Request()); 
+				return $checkMethodArgs->invoke(...$instanceArray);
 			}
 
 			$controllerData = (explode("@",$controllerDatas));
@@ -101,15 +181,56 @@ class Router{
 			
 			$filePath = "\App\Controllers".$controllerName;
 
-			$obj = new $filePath();
+			//Class construct args
+			$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+
+			if(empty($class_constructor_args) ){
+
+				$obj = new $filePath();
+
+			}else{
+
+				foreach ($class_constructor_args as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$param = $arg->getClass()->name;
+
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($param))->isInstantiable() ) {
+							$param = get_interface_bindings($param);
+						}
+
+						$args[] = new $param();
+					}
+				}
+				
+				$obj = new $filePath(...$args);
+			} 
 			
-			$class_methods = get_class_methods(new $filePath());
+			$class_methods = get_class_methods($obj);
 
 			foreach ($class_methods as $method_name) {
 			    if ($method_name === $controllerData[1]) {
-			    	if(!$_POST) return $obj->$method_name();
-				
-					return $obj->$method_name(new Request());
+			    	
+			    	$checkMethodArgs = new \ReflectionMethod($filePath, $controllerData[1]);
+
+					//Check if the method has arguments or not
+		    		if(empty($checkMethodArgs->getParameters())) return $obj->$method_name();
+
+		    		//Loop through the arguments parameters
+					foreach ($checkMethodArgs->getParameters() as $arg) {
+						if ( isset($arg->getClass()->name) ) {
+							$initialize = $arg->getClass()->name;
+
+							//Check if it's an interface
+							if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+								$initialize = get_interface_bindings($param);
+							}
+
+							$instanceArray[] = new $initialize();
+						}
+					}
+					
+					return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 			    }
 			}
 
@@ -139,16 +260,36 @@ class Router{
 			$urlArray = (explode("/",$url));
 			$serverPathArray = (explode("/",$serverPath));
 			
-			
 			if (isset($urlArray[2]) && isset($serverPathArray[2])) {
-
+				
 				return self::checkDynamicRoute($urlArray[2], $serverPathArray[2], $controllerDatas);
 			}
+			
+			/* Dynamic Routing */
 
+			//Check if it's a closure
 			if (is_object($controllerDatas)) {
-				if(!$_POST) return $controllerDatas();
+
+				$checkMethodArgs = new \ReflectionFunction($controllerDatas);
+		    	
+			    //Check if the closure has arguments or not
+				if( empty($checkMethodArgs->getParameters()) ) return $controllerDatas();
+
+				//Loop through the arguments parameters
+				foreach ($checkMethodArgs->getParameters() as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$initialize = $arg->getClass()->name;
+						
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+							$initialize = get_interface_bindings($param);
+						}
+
+						$instanceArray[] = new $initialize();
+					}
+				}
 				
-				return $controllerDatas(new Request()); 
+				return $checkMethodArgs->invoke(...$instanceArray);
 			}
 
 			$controllerData = (explode("@",$controllerDatas));
@@ -156,15 +297,56 @@ class Router{
 			
 			$filePath = "\App\Controllers".$controllerName;
 
-			$obj = new $filePath();
+			//Class construct args
+			$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+
+			if(empty($class_constructor_args) ){
+
+				$obj = new $filePath();
+
+			}else{
+
+				foreach ($class_constructor_args as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$param = $arg->getClass()->name;
+
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($param))->isInstantiable() ) {
+							$param = get_interface_bindings($param);
+						}
+
+						$args[] = new $param();
+					}
+				}
+				
+				$obj = new $filePath(...$args);
+			} 
 			
-			$class_methods = get_class_methods(new $filePath());
+			$class_methods = get_class_methods($obj);
 
 			foreach ($class_methods as $method_name) {
 			    if ($method_name === $controllerData[1]) {
-			    	if(!$_POST) return $obj->$method_name();
-				
-					return $obj->$method_name(new Request());
+			    	
+			    	$checkMethodArgs = new \ReflectionMethod($filePath, $controllerData[1]);
+
+					//Check if the method has arguments or not
+		    		if(empty($checkMethodArgs->getParameters())) return $obj->$method_name();
+
+		    		//Loop through the arguments parameters
+					foreach ($checkMethodArgs->getParameters() as $arg) {
+						if ( isset($arg->getClass()->name) ) {
+							$initialize = $arg->getClass()->name;
+
+							//Check if it's an interface
+							if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+								$initialize = get_interface_bindings($param);
+							}
+
+							$instanceArray[] = new $initialize();
+						}
+					}
+					
+					return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 			    }
 			}
 
@@ -194,16 +376,36 @@ class Router{
 			$urlArray = (explode("/",$url));
 			$serverPathArray = (explode("/",$serverPath));
 			
-			
 			if (isset($urlArray[2]) && isset($serverPathArray[2])) {
-
+				
 				return self::checkDynamicRoute($urlArray[2], $serverPathArray[2], $controllerDatas);
 			}
+			
+			/* Dynamic Routing */
 
+			//Check if it's a closure
 			if (is_object($controllerDatas)) {
-				if(!$_POST) return $controllerDatas();
+
+				$checkMethodArgs = new \ReflectionFunction($controllerDatas);
+		    	
+			    //Check if the closure has arguments or not
+				if( empty($checkMethodArgs->getParameters()) ) return $controllerDatas();
+
+				//Loop through the arguments parameters
+				foreach ($checkMethodArgs->getParameters() as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$initialize = $arg->getClass()->name;
+						
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+							$initialize = get_interface_bindings($param);
+						}
+
+						$instanceArray[] = new $initialize();
+					}
+				}
 				
-				return $controllerDatas(new Request()); 
+				return $checkMethodArgs->invoke(...$instanceArray);
 			}
 
 			$controllerData = (explode("@",$controllerDatas));
@@ -211,15 +413,56 @@ class Router{
 			
 			$filePath = "\App\Controllers".$controllerName;
 
-			$obj = new $filePath();
+			//Class construct args
+			$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+
+			if(empty($class_constructor_args) ){
+
+				$obj = new $filePath();
+
+			}else{
+
+				foreach ($class_constructor_args as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$param = $arg->getClass()->name;
+
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($param))->isInstantiable() ) {
+							$param = get_interface_bindings($param);
+						}
+
+						$args[] = new $param();
+					}
+				}
+				
+				$obj = new $filePath(...$args);
+			} 
 			
-			$class_methods = get_class_methods(new $filePath());
+			$class_methods = get_class_methods($obj);
 
 			foreach ($class_methods as $method_name) {
 			    if ($method_name === $controllerData[1]) {
-			    	if(!$_POST) return $obj->$method_name();
-				
-					return $obj->$method_name(new Request());
+			    	
+			    	$checkMethodArgs = new \ReflectionMethod($filePath, $controllerData[1]);
+
+					//Check if the method has arguments or not
+		    		if(empty($checkMethodArgs->getParameters())) return $obj->$method_name();
+
+		    		//Loop through the arguments parameters
+					foreach ($checkMethodArgs->getParameters() as $arg) {
+						if ( isset($arg->getClass()->name) ) {
+							$initialize = $arg->getClass()->name;
+
+							//Check if it's an interface
+							if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+								$initialize = get_interface_bindings($param);
+							}
+
+							$instanceArray[] = new $initialize();
+						}
+					}
+					
+					return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 			    }
 			}
 
@@ -249,16 +492,36 @@ class Router{
 			$urlArray = (explode("/",$url));
 			$serverPathArray = (explode("/",$serverPath));
 			
-			
 			if (isset($urlArray[2]) && isset($serverPathArray[2])) {
-
+				
 				return self::checkDynamicRoute($urlArray[2], $serverPathArray[2], $controllerDatas);
 			}
+			
+			/* Dynamic Routing */
 
+			//Check if it's a closure
 			if (is_object($controllerDatas)) {
-				if(!$_POST) return $controllerDatas();
+
+				$checkMethodArgs = new \ReflectionFunction($controllerDatas);
+		    	
+			    //Check if the closure has arguments or not
+				if( empty($checkMethodArgs->getParameters()) ) return $controllerDatas();
+
+				//Loop through the arguments parameters
+				foreach ($checkMethodArgs->getParameters() as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$initialize = $arg->getClass()->name;
+						
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+							$initialize = get_interface_bindings($param);
+						}
+
+						$instanceArray[] = new $initialize();
+					}
+				}
 				
-				return $controllerDatas(new Request()); 
+				return $checkMethodArgs->invoke(...$instanceArray);
 			}
 
 			$controllerData = (explode("@",$controllerDatas));
@@ -266,15 +529,56 @@ class Router{
 			
 			$filePath = "\App\Controllers".$controllerName;
 
-			$obj = new $filePath();
+			//Class construct args
+			$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+
+			if(empty($class_constructor_args) ){
+
+				$obj = new $filePath();
+
+			}else{
+
+				foreach ($class_constructor_args as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$param = $arg->getClass()->name;
+
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($param))->isInstantiable() ) {
+							$param = get_interface_bindings($param);
+						}
+
+						$args[] = new $param();
+					}
+				}
+				
+				$obj = new $filePath(...$args);
+			} 
 			
-			$class_methods = get_class_methods(new $filePath());
+			$class_methods = get_class_methods($obj);
 
 			foreach ($class_methods as $method_name) {
 			    if ($method_name === $controllerData[1]) {
-			    	if(!$_POST) return $obj->$method_name();
-				
-					return $obj->$method_name(new Request());
+			    	
+			    	$checkMethodArgs = new \ReflectionMethod($filePath, $controllerData[1]);
+
+					//Check if the method has arguments or not
+		    		if(empty($checkMethodArgs->getParameters())) return $obj->$method_name();
+
+		    		//Loop through the arguments parameters
+					foreach ($checkMethodArgs->getParameters() as $arg) {
+						if ( isset($arg->getClass()->name) ) {
+							$initialize = $arg->getClass()->name;
+
+							//Check if it's an interface
+							if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+								$initialize = get_interface_bindings($param);
+							}
+
+							$instanceArray[] = new $initialize();
+						}
+					}
+					
+					return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 			    }
 			}
 
@@ -285,29 +589,42 @@ class Router{
 
 	/**
 	 * This static method compares the exploded arrays of the url to the server's request URI
+	 * NOTE:- This only works till the 2 offset of the arrays
 	 * 
 	 * @param  string $url 
 	 * @return Boolean      
 	 */
 	public static function compareArray(string $url)
 	{
-
 		$server = (explode("/",$_SERVER['REQUEST_URI']));
 		$url = (explode("/",$url));
 
 		$compareOne = $url[1] <=> $server[1];
 
-		$compareTwo = $url[2] <=> $server[2];
-
-		if ( (strpos($url[2], "{") !== false) || (strpos($url[2], "}") !== false)  ) {
-    		$compareTwo = 0;
+		//Check if the offset 2 doesn't exists for both arrays else return boolean values
+		if (  (!isset($url[2]) && !isset($server[2]) ) && $compareOne == 0  ){
+			return true;
 		}
 
-		if (isset($url[2]) && isset($server[2]) && $compareOne == 0 && $compareTwo == 0 ) {
-			return true;
-		}else{
+		if (  (!isset($url[2]) && !isset($server[2]) ) && $url[1] !== $server[1] ){
 			return false;
 		}
+		
+		//Check if the offset 2 exists in both arrays
+		if (isset($url[2]) && isset($server[2]) ) {
+			
+			$compareTwo = $url[2] <=> $server[2];
+
+			if ( (strpos($url[2], "{") !== false) || (strpos($url[2], "}") !== false)  ) {
+	    		$compareTwo = 0;
+			}
+
+			if (isset($url[2]) && isset($server[2]) && $compareOne == 0 && $compareTwo == 0 ) {
+				return true;
+			}else{
+				return false;
+			}
+		}	
 	}
 
 	/**
@@ -329,8 +646,22 @@ class Router{
 		    	
 		    //Check if the closure has arguments or not
 		    if(empty($checkMethodArgs->getParameters())) return $controllerDatas();
-		
-			return $controllerDatas(new Request()); 
+
+		    //Loop through the arguments parameters
+			foreach ($checkMethodArgs->getParameters() as $arg) {
+				if ( isset($arg->getClass()->name) ) {
+					$initialize = $arg->getClass()->name;
+
+					//Check if it's an interface
+					if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+						$initialize = get_interface_bindings($param);
+					}
+
+					$instanceArray[] = new $initialize();
+				}
+			}
+			
+			return $checkMethodArgs->invoke(...$instanceArray);
 		}
 
 		$controllerData = (explode("@",$controllerDatas));
@@ -338,9 +669,32 @@ class Router{
 		
 		$filePath = "\App\Controllers".$controllerName;
 
-		$obj = new $filePath();
+		//Class construct args
+		$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+
+		if(empty($class_constructor_args) ){
+
+			$obj = new $filePath();
+
+		}else{
+
+			foreach ($class_constructor_args as $arg) {
+				if ( isset($arg->getClass()->name) ) {
+					$param = $arg->getClass()->name;
+
+					//Check if it's an interface
+					if ( !(new \ReflectionClass($param))->isInstantiable() ) {
+						$param = get_interface_bindings($param);
+					}
+
+					$args[] = new $param();
+				}
+			}
+			
+			$obj = new $filePath(...$args);
+		} 
 		
-		$class_methods = get_class_methods(new $filePath());
+		$class_methods = get_class_methods($obj);
 
 		foreach ($class_methods as $method_name) {
 		    if ($method_name === $controllerData[1]) {
@@ -349,8 +703,22 @@ class Router{
 		    	
 		    	//Check if the method has arguments or not
 		    	if(empty($checkMethodArgs->getParameters())) return $obj->$method_name(); 
-			
-				return $obj->$method_name(new Request()); 
+				
+				//Loop through the arguments parameters
+				foreach ($checkMethodArgs->getParameters() as $arg) {
+					if ( isset($arg->getClass()->name) ) {
+						$initialize = $arg->getClass()->name;
+
+						//Check if it's an interface
+						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
+							$initialize = get_interface_bindings($param);
+						}
+
+						$instanceArray[] = new $initialize();
+					}
+				}
+				
+				return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 		    }
 		}
 	}
