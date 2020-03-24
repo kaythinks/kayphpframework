@@ -1,6 +1,6 @@
 # KayPHP Framework
 
--- Modified the routing system to implement a Dependency Injection Container using the Reflection API (24/03/2020)
+-- Modified the routing system to utilize the Reflection API for dependency injection (24/03/2020)
 
 -- Updated the system helper functions to be PHP 7.3 complaint  (24/03/2020)
 
