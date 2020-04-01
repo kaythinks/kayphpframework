@@ -88,7 +88,7 @@ if (!function_exists('is_api')) {
 if (!function_exists('get_interface_bindings')) {
 	function get_interface_bindings(string $name)
 	{
-		$binding = \App\Systems\DependencyInjectionContainer\Container::$bindings;
+		$binding = \App\Config\IocContainer\Container::$bindings;
 	
 		return isset($binding[$name]) ? $binding[$name] : false ;
 	}

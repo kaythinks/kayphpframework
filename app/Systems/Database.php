@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Config;
+namespace App\Systems;
 
 use App\Config\Env as ENV;
 use PDO;

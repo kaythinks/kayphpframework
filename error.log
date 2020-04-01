@@ -1,1 +1,16 @@
  # Tuesday 24th of March 2020 11:14:29 PM :- This route /docs/11 doesn't exist in your Application !
+ # Wednesday 1st of April 2020 08:15:15 PM :- This route /docs/11 doesn't exist in your Application !
+ # Wednesday 1st of April 2020 08:15:30 PM :-This Error ' Class 'App\System\Database' not found ' with status code 0 occured on line 9 of file/Library/WebServer/Documents/kayphpframework/app/Models/Model.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/vendor/composer/ClassLoader.php(444): include()
+#1 /Library/WebServer/Documents/kayphpframework/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/Library/WebSer...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Models\\Mode...')
+#3 /Library/WebServer/Documents/kayphpframework/app/Models/User.php(7): spl_autoload_call('App\\Models\\Mode...')
+#4 /Library/WebServer/Documents/kayphpframework/vendor/composer/ClassLoader.php(444): include('/Library/WebSer...')
+#5 /Library/WebServer/Documents/kayphpframework/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/Library/WebSer...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Models\\User')
+#7 /Library/WebServer/Documents/kayphpframework/app/Controllers/LoginController.php(34): spl_autoload_call('App\\Models\\User')
+#8 [internal function]: App\Controllers\LoginController->login(Object(App\Systems\Request))
+#9 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(164): ReflectionMethod->invokeArgs(Object(App\Controllers\LoginController), Array)
+#10 /Library/WebServer/Documents/kayphpframework/Route.php(31): App\Systems\Router::post('/login', 'LoginController...')
+#11 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(26): require('/Library/WebSer...')
+#12 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#13 {main}!

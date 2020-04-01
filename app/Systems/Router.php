@@ -3,6 +3,7 @@ namespace App\Systems;
 
 use Exception;
 use App\Systems\Request;
+use App\Systems\Resolver;
 
 class Router{
 
@@ -42,20 +43,8 @@ class Router{
 		    	
 			    //Check if the closure has arguments or not
 				if( empty($checkMethodArgs->getParameters()) ) return $controllerDatas();
-
-				//Loop through the arguments parameters
-				foreach ($checkMethodArgs->getParameters() as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$initialize = $arg->getClass()->name;
-						
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-							$initialize = get_interface_bindings($param);
-						}
-
-						$instanceArray[] = new $initialize();
-					}
-				}
+				
+				$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 				
 				return $checkMethodArgs->invoke(...$instanceArray);
 			}
@@ -74,18 +63,7 @@ class Router{
 
 			}else{
 
-				foreach ($class_constructor_args as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$param = $arg->getClass()->name;
-
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($param))->isInstantiable() ) {
-							$param = get_interface_bindings($param);
-						}
-
-						$args[] = new $param();
-					}
-				}
+				$args = self::getArgsParams($class_constructor_args);
 				
 				$obj = new $filePath(...$args);
 			} 
@@ -100,20 +78,8 @@ class Router{
 					//Check if the method has arguments or not
 		    		if(empty($checkMethodArgs->getParameters())) return $obj->$method_name();
 
-		    		//Loop through the arguments parameters
-					foreach ($checkMethodArgs->getParameters() as $arg) {
-						if ( isset($arg->getClass()->name) ) {
-							$initialize = $arg->getClass()->name;
+					$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 
-							//Check if it's an interface
-							if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-								$initialize = get_interface_bindings($param);
-							}
-
-							$instanceArray[] = new $initialize();
-						}
-					}
-					
 					return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 			    }
 			}
@@ -158,20 +124,8 @@ class Router{
 		    	
 			    //Check if the closure has arguments or not
 				if( empty($checkMethodArgs->getParameters()) ) return $controllerDatas();
-
-				//Loop through the arguments parameters
-				foreach ($checkMethodArgs->getParameters() as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$initialize = $arg->getClass()->name;
-						
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-							$initialize = get_interface_bindings($param);
-						}
-
-						$instanceArray[] = new $initialize();
-					}
-				}
+				
+				$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 				
 				return $checkMethodArgs->invoke(...$instanceArray);
 			}
@@ -190,18 +144,7 @@ class Router{
 
 			}else{
 
-				foreach ($class_constructor_args as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$param = $arg->getClass()->name;
-
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($param))->isInstantiable() ) {
-							$param = get_interface_bindings($param);
-						}
-
-						$args[] = new $param();
-					}
-				}
+				$args = self::getArgsParams($class_constructor_args);
 				
 				$obj = new $filePath(...$args);
 			} 
@@ -216,20 +159,8 @@ class Router{
 					//Check if the method has arguments or not
 		    		if(empty($checkMethodArgs->getParameters())) return $obj->$method_name();
 
-		    		//Loop through the arguments parameters
-					foreach ($checkMethodArgs->getParameters() as $arg) {
-						if ( isset($arg->getClass()->name) ) {
-							$initialize = $arg->getClass()->name;
+					$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 
-							//Check if it's an interface
-							if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-								$initialize = get_interface_bindings($param);
-							}
-
-							$instanceArray[] = new $initialize();
-						}
-					}
-					
 					return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 			    }
 			}
@@ -274,20 +205,8 @@ class Router{
 		    	
 			    //Check if the closure has arguments or not
 				if( empty($checkMethodArgs->getParameters()) ) return $controllerDatas();
-
-				//Loop through the arguments parameters
-				foreach ($checkMethodArgs->getParameters() as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$initialize = $arg->getClass()->name;
-						
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-							$initialize = get_interface_bindings($param);
-						}
-
-						$instanceArray[] = new $initialize();
-					}
-				}
+				
+				$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 				
 				return $checkMethodArgs->invoke(...$instanceArray);
 			}
@@ -306,18 +225,7 @@ class Router{
 
 			}else{
 
-				foreach ($class_constructor_args as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$param = $arg->getClass()->name;
-
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($param))->isInstantiable() ) {
-							$param = get_interface_bindings($param);
-						}
-
-						$args[] = new $param();
-					}
-				}
+				$args = self::getArgsParams($class_constructor_args);
 				
 				$obj = new $filePath(...$args);
 			} 
@@ -332,20 +240,8 @@ class Router{
 					//Check if the method has arguments or not
 		    		if(empty($checkMethodArgs->getParameters())) return $obj->$method_name();
 
-		    		//Loop through the arguments parameters
-					foreach ($checkMethodArgs->getParameters() as $arg) {
-						if ( isset($arg->getClass()->name) ) {
-							$initialize = $arg->getClass()->name;
+					$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 
-							//Check if it's an interface
-							if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-								$initialize = get_interface_bindings($param);
-							}
-
-							$instanceArray[] = new $initialize();
-						}
-					}
-					
 					return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 			    }
 			}
@@ -390,20 +286,8 @@ class Router{
 		    	
 			    //Check if the closure has arguments or not
 				if( empty($checkMethodArgs->getParameters()) ) return $controllerDatas();
-
-				//Loop through the arguments parameters
-				foreach ($checkMethodArgs->getParameters() as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$initialize = $arg->getClass()->name;
-						
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-							$initialize = get_interface_bindings($param);
-						}
-
-						$instanceArray[] = new $initialize();
-					}
-				}
+				
+				$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 				
 				return $checkMethodArgs->invoke(...$instanceArray);
 			}
@@ -422,18 +306,7 @@ class Router{
 
 			}else{
 
-				foreach ($class_constructor_args as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$param = $arg->getClass()->name;
-
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($param))->isInstantiable() ) {
-							$param = get_interface_bindings($param);
-						}
-
-						$args[] = new $param();
-					}
-				}
+				$args = self::getArgsParams($class_constructor_args);
 				
 				$obj = new $filePath(...$args);
 			} 
@@ -448,20 +321,8 @@ class Router{
 					//Check if the method has arguments or not
 		    		if(empty($checkMethodArgs->getParameters())) return $obj->$method_name();
 
-		    		//Loop through the arguments parameters
-					foreach ($checkMethodArgs->getParameters() as $arg) {
-						if ( isset($arg->getClass()->name) ) {
-							$initialize = $arg->getClass()->name;
+					$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 
-							//Check if it's an interface
-							if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-								$initialize = get_interface_bindings($param);
-							}
-
-							$instanceArray[] = new $initialize();
-						}
-					}
-					
 					return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 			    }
 			}
@@ -506,20 +367,8 @@ class Router{
 		    	
 			    //Check if the closure has arguments or not
 				if( empty($checkMethodArgs->getParameters()) ) return $controllerDatas();
-
-				//Loop through the arguments parameters
-				foreach ($checkMethodArgs->getParameters() as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$initialize = $arg->getClass()->name;
-						
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-							$initialize = get_interface_bindings($param);
-						}
-
-						$instanceArray[] = new $initialize();
-					}
-				}
+				
+				$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 				
 				return $checkMethodArgs->invoke(...$instanceArray);
 			}
@@ -538,18 +387,7 @@ class Router{
 
 			}else{
 
-				foreach ($class_constructor_args as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$param = $arg->getClass()->name;
-
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($param))->isInstantiable() ) {
-							$param = get_interface_bindings($param);
-						}
-
-						$args[] = new $param();
-					}
-				}
+				$args = self::getArgsParams($class_constructor_args);
 				
 				$obj = new $filePath(...$args);
 			} 
@@ -564,20 +402,8 @@ class Router{
 					//Check if the method has arguments or not
 		    		if(empty($checkMethodArgs->getParameters())) return $obj->$method_name();
 
-		    		//Loop through the arguments parameters
-					foreach ($checkMethodArgs->getParameters() as $arg) {
-						if ( isset($arg->getClass()->name) ) {
-							$initialize = $arg->getClass()->name;
+					$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 
-							//Check if it's an interface
-							if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-								$initialize = get_interface_bindings($param);
-							}
-
-							$instanceArray[] = new $initialize();
-						}
-					}
-					
 					return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 			    }
 			}
@@ -615,6 +441,7 @@ class Router{
 			
 			$compareTwo = $url[2] <=> $server[2];
 
+			//Check if it's from a dynamic url
 			if ( (strpos($url[2], "{") !== false) || (strpos($url[2], "}") !== false)  ) {
 	    		$compareTwo = 0;
 			}
@@ -637,7 +464,10 @@ class Router{
 	 */
 	public static function checkDynamicRoute(string $urlArrayVal, string $serverPathArrayVal, $controllerDatas)
 	{
-		$_REQUEST[trim($urlArrayVal, '{,}')] = $serverPathArrayVal;
+		//Save the dynamic url value in a request array
+		if ( (strpos($urlArrayVal, "{") !== false) && (strpos($urlArrayVal, "}") !== false) ) {
+			$_REQUEST[trim($urlArrayVal, '{,}')] = $serverPathArrayVal;
+		}
 
 		//For closures
 		if (is_object($controllerDatas)) {
@@ -647,20 +477,8 @@ class Router{
 		    //Check if the closure has arguments or not
 		    if(empty($checkMethodArgs->getParameters())) return $controllerDatas();
 
-		    //Loop through the arguments parameters
-			foreach ($checkMethodArgs->getParameters() as $arg) {
-				if ( isset($arg->getClass()->name) ) {
-					$initialize = $arg->getClass()->name;
-
-					//Check if it's an interface
-					if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-						$initialize = get_interface_bindings($param);
-					}
-
-					$instanceArray[] = new $initialize();
-				}
-			}
-			
+		    $instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
+				
 			return $checkMethodArgs->invoke(...$instanceArray);
 		}
 
@@ -678,19 +496,8 @@ class Router{
 
 		}else{
 
-			foreach ($class_constructor_args as $arg) {
-				if ( isset($arg->getClass()->name) ) {
-					$param = $arg->getClass()->name;
-
-					//Check if it's an interface
-					if ( !(new \ReflectionClass($param))->isInstantiable() ) {
-						$param = get_interface_bindings($param);
-					}
-
-					$args[] = new $param();
-				}
-			}
-			
+			$args = self::getArgsParams($class_constructor_args);
+				
 			$obj = new $filePath(...$args);
 		} 
 		
@@ -704,22 +511,43 @@ class Router{
 		    	//Check if the method has arguments or not
 		    	if(empty($checkMethodArgs->getParameters())) return $obj->$method_name(); 
 				
-				//Loop through the arguments parameters
-				foreach ($checkMethodArgs->getParameters() as $arg) {
-					if ( isset($arg->getClass()->name) ) {
-						$initialize = $arg->getClass()->name;
+				$instanceArray = self::getArgsParams($checkMethodArgs->getParameters());
 
-						//Check if it's an interface
-						if ( !(new \ReflectionClass($initialize))->isInstantiable() ) {
-							$initialize = get_interface_bindings($param);
-						}
-
-						$instanceArray[] = new $initialize();
-					}
-				}
-				
 				return $checkMethodArgs->invokeArgs($obj, $instanceArray);
 		    }
 		}
+	}
+
+	/**
+	 * This method is for resolving dependencies in a recursive manner
+	 * 
+	 * @param   $params 
+	 * @return array
+	 */
+	private static function getArgsParams($params)
+	{
+		foreach ($params as $arg) {
+			if ( isset($arg->getClass()->name) ) {
+				$initialize = $arg->getClass()->name;
+
+				//Check if it's an interface
+				if ( !(new \ReflectionClass($initialize))->isInstantiable()  ) {
+					$initialize = get_interface_bindings($initialize);
+
+					$initialize = !$initialize ? debug('Error with the interface binding. Kindly check !') : $initialize;	
+				}
+				
+				if ((new \ReflectionClass($initialize))->isInstantiable() ) {
+
+					$instanceArray[] = ( new Resolver() )->resolve($initialize);
+				}
+				
+			}else{
+
+				$instanceArray[] = $arg->getDefaultValue();
+			}
+		}
+
+		return $instanceArray;
 	}
 }

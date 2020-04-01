@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Systems\DependencyInjectionContainer;
+namespace App\Config\IocContainer;
 
 class Container
 {

@@ -21,6 +21,7 @@
                     <p> -Easy PHP Email Dispatch Support. </p>
                     <p> - Cloudinary File Upload Support. </p>
                     <p> - PHPUnit Testing Support. </p>
+                    <p> - Intelligent routing system powered by PHP's Reflection API
                 </div>
                 <div class="col-sm-5">
                     <p> - Rapid Prototyping. </p>
@@ -29,6 +30,7 @@
                     <p> - RabbitMQ Queueing Support. </p>
                     <p> - Support for Redis Caching. </p>
                     <p> - Add packages you need .</p>
+                    <p> - Support for IoC coding methodology </p>
                 </div>
             </div>
             <div style="margin-bottom: 50px;"></div>

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Config\Database;
+use App\Systems\Database;
 use App\Systems\Request;
 use App\Models\ModelInterface;
 

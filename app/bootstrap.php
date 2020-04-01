@@ -37,7 +37,7 @@ try {
 		$_SESSION['prev'] = $_SERVER['REQUEST_URI'];
 	}
 	
-} catch (\Error $e) {
+} catch (\Throwable $e) {
 
 	error_log(" # ".date('l jS \of F Y h:i:s A')." :-This Error ' ".$e->getMessage()." ' with status code " . $e->getCode() . " occured on line ". $e->getLine() ." of file". $e->getFile()." STACKTRACE ".$e->getTraceAsString()."!\r\n", 3, 'error.log');
 	error_log(" # ".date('l jS \of F Y h:i:s A')." :- This Error' ".$e->getMessage()." ' with status code " . $e->getCode() . " occured on line ". $e->getLine() ." of file". $e->getFile()." STACKTRACE ".$e->getTraceAsString()."!\r\n", 3, 'app/Systems/logs/error.log');
