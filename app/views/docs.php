@@ -21,7 +21,7 @@
                     <p> -Easy PHP Email Dispatch Support. </p>
                     <p> - Cloudinary File Upload Support. </p>
                     <p> - PHPUnit Testing Support. </p>
-                    <p> - Intelligent routing system powered by PHP's Reflection API
+                    <p> - Intelligent routing system powered by PHP's Reflection API </p>
                 </div>
                 <div class="col-sm-5">
                     <p> - Rapid Prototyping. </p>
