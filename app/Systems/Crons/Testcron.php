@@ -1,7 +1,7 @@
 <?php
 namespace App\Systems\Crons;
 
-use App\Config\Database;
+use App\Systems\Database;
 use App\Systems\Mail;
 
 class Testcron{
