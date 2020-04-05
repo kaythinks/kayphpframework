@@ -137,6 +137,8 @@ class Database{
 		    // inserting a record
 		    $stmt->execute($request->all());
 
+		    return true;
+
 		    $this->closeConnection();
 		}
 		catch (PDOException $e)
