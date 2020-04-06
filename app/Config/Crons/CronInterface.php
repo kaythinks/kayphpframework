@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Systems\Crons;
+namespace App\Config\Crons;
 
 interface CronInterface{
 

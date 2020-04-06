@@ -1,5 +1,5 @@
 <?php
-namespace App\Systems\Crons;
+namespace App\Config\Crons;
 
 use App\Systems\Database;
 use App\Systems\Mail;

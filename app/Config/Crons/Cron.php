@@ -2,8 +2,8 @@
 
 require __DIR__ .'/../../../vendor/autoload.php';
 
-use App\Systems\Crons\Testcron;
-use App\Systems\Crons\CronInterface;
+use App\Config\Crons\Testcron;
+use App\Config\Crons\CronInterface;
 
 class Cron implements CronInterface{
 
@@ -32,4 +32,4 @@ class Cron implements CronInterface{
 
 (new Cron())->run();
 
-//* * * * * php /Library/WebServer/Documents/kayphpframework/app/Systems/Crons/Cron.php > /dev/null 2>&1
+//* * * * * php /Library/WebServer/Documents/kayphpframework/app/Config/Crons/Cron.php > /dev/null 2>&1
