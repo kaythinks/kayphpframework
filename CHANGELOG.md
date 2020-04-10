@@ -9,3 +9,5 @@
 -- Moved user facing Config files to the Config Folder. ( 01/04/2020 )
 
 -- Added a phpunit.xml for testing configuration ( 01/04/2020 )
+
+-- Changed the file path of the Middleware tot the Config folder path (10/04/2020)
