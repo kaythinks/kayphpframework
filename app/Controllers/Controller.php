@@ -5,7 +5,7 @@ namespace App\Controllers;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use App\Systems\Session;
-use App\Systems\Middleware;
+use App\Config\Middleware;
 use Exception;
 
 class Controller{

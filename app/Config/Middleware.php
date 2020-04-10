@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Systems;
+namespace App\Config;
 
 /**
  * This utility class contains different methods which serve as middlewares for different use cases. Add your own middleware methods
