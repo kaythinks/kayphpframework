@@ -43,6 +43,8 @@ class Request {
 	public static function put(string $name, $input)
 	{
 		$_REQUEST[$name] = $input;
+
+		return true;
 	}
 
 	public static function push(array $input)

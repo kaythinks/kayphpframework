@@ -27,8 +27,8 @@
         "files": ["app/Systems/Helpers.php","Helpers.php"]
     },
     "scripts": {
-        "migrate tables": "php app/Systems/Migration.php",
-        "seed tables": "php app/Systems/Seeding.php",
+        "migrate tables": "php app/Config/Migration.php",
+        "seed tables": "php app/Config/Seeding.php",
         "start crons": "php app/Systems/Crons/Cron.php",
         "queue mails": "php app/Systems/Queues/MailQueueProcessor.php"
     },

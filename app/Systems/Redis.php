@@ -78,4 +78,43 @@ class Redis{
 		return true;
 	}
 
+	/**
+	 * This method checks if a key exists in the Redis Server
+	 * 
+	 * @param  mixed $keyName [description]
+	 * @return bool 
+	 */ 
+	public function checkIfExists($keyName) : bool
+	{
+		$value = $this->client->exists($keyName); 
+
+		return $value > 0 ? true : false;
+
+	}
+
+	/**
+	 * This method is for deleting a key
+	 * 
+	 * @param  mixed $keyName
+	 * @return bool
+	 */
+	public function flushKeyValue($keyName)
+	{
+		$this->client->del($keyName); 
+
+		return true;
+	}
+
+	/**
+	 * This method is for deleting all keys in a Redis database
+	 * 
+	 * @return bool
+	 */
+	public function flushAllValues() 
+	{
+		$this->client->flushDb();
+
+		return true;
+	}
+
 }

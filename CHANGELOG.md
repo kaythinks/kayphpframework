@@ -10,4 +10,10 @@
 
 -- Added a phpunit.xml for testing configuration ( 01/04/2020 )
 
--- Changed the file path of the Middleware tot the Config folder path (10/04/2020)
+-- Changed the file path of the Middleware to the Config folder path (10/04/2020)
+
+-- Changed the file path of the Migration to the Config folder path (11/04/2020)
+
+-- Added 3 methods to the Redis class namely checkIfExists, flushKeyValue & flushAllValues (11/04/2020)
+
+-- Changed the file path of the Seeding to the Config folder path (11/04/2020)

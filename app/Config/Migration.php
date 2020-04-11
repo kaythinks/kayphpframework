@@ -2,7 +2,7 @@
 
 require __DIR__ .'/../../vendor/autoload.php';
 
-use App\Config\Database;
+use App\Systems\Database;
 
 class Migration{
 
