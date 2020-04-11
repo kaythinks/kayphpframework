@@ -14,20 +14,15 @@ class Controller{
 
 	public function __construct()
 	{
-		// Specify our Twig templates location
 		$loader = new FilesystemLoader('app/views');
 
- 		// Instantiate our Twig
 		$twig = new Environment($loader);
 
 		$this->twig = $twig;
 
-		//Add the csrf token
 		$this->twig->addGlobal('csrf_token', csrf_token());
 
-		//Set authentication
-		$auth = (Session::exists('auth')) ? true : false ;
-		$this->twig->addGlobal('auth', $auth);
+		$this->twig->addGlobal('auth', Session::exists('auth'));
 
 		//Check if the request is an API request
 		$isApi = is_api();

@@ -2478,3 +2478,14 @@
 #11 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(26): require('/Library/WebSer...')
 #12 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
 #13 {main}!
+ # Saturday 11th of April 2020 07:52:26 PM :- This Error' Call to a member function render() on null ' with status code 0 occured on line 33 of file/Library/WebServer/Documents/kayphpframework/app/Controllers/HomeController.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(79): App\Controllers\HomeController->index()
+#1 /Library/WebServer/Documents/kayphpframework/Route.php(10): App\Systems\Router::get('/', 'HomeController@...')
+#2 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(26): require('/Library/WebSer...')
+#3 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#4 {main}!
+ # Saturday 11th of April 2020 11:28:31 PM :- This Error' Attribute 'data 'does not exist in this Session object ! ' with status code 1 occured on line 16 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Session.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/Controllers/DashboardController.php(27): App\Systems\Session::get('data')
+#1 /Library/WebServer/Documents/kayphpframework/app/Systems/Router.php(79): App\Controllers\DashboardController->home()
+#2 /Library/WebServer/Documents/kayphpframework/Route.php(20): App\Systems\Router::get('/dashboard', 'DashboardContro...')
+#3 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(26): require('/Library/WebSer...')
+#4 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#5 {main}!
