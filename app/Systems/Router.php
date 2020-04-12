@@ -178,7 +178,7 @@ class Router{
 	 */
 	public static function put(string $url,  $controllerDatas){
 
-		$serverPath = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
+		$server = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
 
 		$serverPath = strpos($server, "?") ? substr($server, 0, strpos($server, "?")) : $server; 
 	
@@ -259,7 +259,7 @@ class Router{
 	 */
 	public static function patch(string $url,  $controllerDatas){
 
-		$serverPath = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
+		$server = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
 
 		$serverPath = strpos($server, "?") ? substr($server, 0, strpos($server, "?")) : $server; 
 	
@@ -340,7 +340,7 @@ class Router{
 	 */
 	public static function delete(string $url,  $controllerDatas){
 
-		$serverPath = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
+		$server = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
 
 		$serverPath = strpos($server, "?") ? substr($server, 0, strpos($server, "?")) : $server; 
 	
