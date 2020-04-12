@@ -1,6 +1,7 @@
 {
     "name": "kaythinks/kayphpframework",
     "keywords": ["kayphpframework", "framework"],
+    "description": "KayPHP is a minimalistic PHP MVC Framework",
     "license": "MIT",
     "authors": [
         {
