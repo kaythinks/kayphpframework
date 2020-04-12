@@ -54,8 +54,10 @@ class Router{
 			
 			$filePath = "\App\Controllers".$controllerName;
 
+			$reflector = new \ReflectionClass($filePath);
+
 			//Class construct args
-			$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+			$class_constructor_args = !is_null($reflector->getConstructor()) ? (new \ReflectionMethod($filePath, '__construct'))->getParameters() : '';
 
 			if(empty($class_constructor_args) ){
 
@@ -135,8 +137,10 @@ class Router{
 			
 			$filePath = "\App\Controllers".$controllerName;
 
+			$reflector = new \ReflectionClass($filePath);
+
 			//Class construct args
-			$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+			$class_constructor_args = !is_null($reflector->getConstructor()) ? (new \ReflectionMethod($filePath, '__construct'))->getParameters() : '';
 
 			if(empty($class_constructor_args) ){
 
@@ -216,8 +220,10 @@ class Router{
 			
 			$filePath = "\App\Controllers".$controllerName;
 
+			$reflector = new \ReflectionClass($filePath);
+
 			//Class construct args
-			$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+			$class_constructor_args = !is_null($reflector->getConstructor()) ? (new \ReflectionMethod($filePath, '__construct'))->getParameters() : '';
 
 			if(empty($class_constructor_args) ){
 
@@ -297,8 +303,10 @@ class Router{
 			
 			$filePath = "\App\Controllers".$controllerName;
 
+			$reflector = new \ReflectionClass($filePath);
+
 			//Class construct args
-			$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+			$class_constructor_args = !is_null($reflector->getConstructor()) ? (new \ReflectionMethod($filePath, '__construct'))->getParameters() : '';
 
 			if(empty($class_constructor_args) ){
 
@@ -378,8 +386,10 @@ class Router{
 			
 			$filePath = "\App\Controllers".$controllerName;
 
+			$reflector = new \ReflectionClass($filePath);
+
 			//Class construct args
-			$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+			$class_constructor_args = !is_null($reflector->getConstructor()) ? (new \ReflectionMethod($filePath, '__construct'))->getParameters() : '';
 
 			if(empty($class_constructor_args) ){
 
@@ -487,8 +497,10 @@ class Router{
 		
 		$filePath = "\App\Controllers".$controllerName;
 
+		$reflector = new \ReflectionClass($filePath);
+
 		//Class construct args
-		$class_constructor_args = (new \ReflectionMethod($filePath, '__construct'))->getParameters();
+		$class_constructor_args = !is_null($reflector->getConstructor()) ? (new \ReflectionMethod($filePath, '__construct'))->getParameters() : '';
 
 		if(empty($class_constructor_args) ){
 
