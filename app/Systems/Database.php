@@ -44,7 +44,7 @@ class Database{
 	 			$data .= "`$key`".$model->getDBType($model->table_attributes,$key).",";
 	 		}
 
-	 		$sql = "CREATE TABLE IF NOT EXISTS `".$model->table."` ( `id` INT NOT NULL AUTO_INCREMENT, ".$data ."`created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP , `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  PRIMARY KEY (`id`)) ";
+	 		$sql = "CREATE TABLE IF NOT EXISTS `".$model->table."` ( `id` INT NOT NULL AUTO_INCREMENT, ".$data ."`created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP , `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  PRIMARY KEY (`id`)) ";
 
 	 		$this->dbh->exec($sql);
 
@@ -98,7 +98,8 @@ class Database{
 		catch (PDOException $e)
 		{
 			Logger::error($e);
-		    echo "There is some problem in connection: " . $e->getMessage();
+
+			throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 
 	}
@@ -144,7 +145,8 @@ class Database{
 		catch (PDOException $e)
 		{
 			Logger::error($e);
-		    echo "There is some problem in connection: " . $e->getMessage();
+
+		   throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 
 	}
@@ -188,7 +190,8 @@ class Database{
 		catch (PDOException $e)
 		{
 			Logger::error($e);
-		    echo "There is some problem in connection: " . $e->getMessage()." \r\n";
+
+		    throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 
 	}
@@ -212,7 +215,7 @@ class Database{
 
 			Logger::error($e);
 
-			echo "There is some problem in connection: " . $e->getMessage();
+			throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 	}
 
@@ -237,7 +240,7 @@ class Database{
 
 			Logger::error($e);
 
-			echo "There is some problem in connection: " . $e->getMessage();
+			throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 	}
 
@@ -262,7 +265,7 @@ class Database{
 
 			Logger::error($e);
 
-			echo "There is some problem in connection: " . $e->getMessage();
+			throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 	}
 
@@ -287,7 +290,7 @@ class Database{
 
 			Logger::error($e);
 
-			echo "There is some problem in connection: " . $e->getMessage();
+			throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 	}
 
@@ -338,7 +341,7 @@ class Database{
 
 			Logger::error($e);
 
-			echo "There is some problem in connection: " . $e->getMessage();
+			throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 	}
 
@@ -368,7 +371,7 @@ class Database{
 
 			Logger::error($e);
 
-			echo "There is some problem in connection: " . $e->getMessage();
+			throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 	}
 
@@ -391,7 +394,7 @@ class Database{
 
 			Logger::error($e);
 
-			echo "There is some problem in connection: " . $e->getMessage();
+			throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 	}
 
@@ -414,7 +417,7 @@ class Database{
 
 			Logger::error($e);
 
-			echo "There is some problem in connection: " . $e->getMessage();
+			throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
 		}
 	}
 

@@ -39,17 +39,8 @@ class HomeController extends Controller{
 	 * @return Response
 	 */
 	public function register(){
-
-		if (Session::exists('error')) {
-
-			$error = Session::get('error');
-			//Unset the session
-			Session::destroy('error');
-		}else{
-			$error = false;
-		}
 		
-		echo $this->twig->render('register.php', ['error' => $error ]);
+		echo $this->twig->render('register.php', ['error' => $this->getSession('error') ]);
 	}
 
 	/**
@@ -59,16 +50,7 @@ class HomeController extends Controller{
 	 */
 	public function login(){
 
-		if (Session::exists('error')) {
-
-			$error = Session::get('error');
-			//Unset the session
-			Session::destroy('error');
-		}else{
-			$error = false;
-		}
-
-		echo $this->twig->render('login.php', ['error' => $error ]);
+		echo $this->twig->render('login.php', ['error' => $this->getSession('error') ]);
 	}
 
 	/**
@@ -78,21 +60,7 @@ class HomeController extends Controller{
 	 */
 	public function forgotPassword(){
 
-		if (!Session::exists('error')) $error = false;
-		
-		if (Session::exists('error')) {
-			$error = Session::get('error');
-			Session::destroy('error');
-		}
-
-		if (!Session::exists('info')) $info = false;
-
-		if (Session::exists('info')){
-			$info = Session::get('info');
-			Session::destroy('info');
-		}
-
-		echo $this->twig->render('forgotpassword.php', ['error' => $error , 'info' => $info ]);
+		echo $this->twig->render('forgotpassword.php', ['error' => $this->getSession('error'), 'info' => $this->getSession('info') ]);
 	}
 
 	/**
@@ -187,47 +155,5 @@ class HomeController extends Controller{
 		Mail::sendEmail($recipientEmail, $recipientFullName, $subject, $body);
 
 		return $this->redirect('/');
-	}
-
-	/**
-	 * This method is for queueing email messages
-	 * 
-	 * @param  Request $request 
-	 * @return Response
-	 */
-	public function queueEmails(Request $request)
-	{
-		$email = $request->get('email');
-
-		for ($i=0; $i < 10; $i++) { 
-
-			MailQueueClient::attach($email);
-		}
-		
-		echo "done";
-	}
-
-	/**
-	 * This method is for getting a value in the Redis Database
-	 * 
-	 * @return Response
-	 */
-	public function getRedisValue()
-	{
-		$value = (new Redis())->getValue('KayPHP');
-
-		echo $value;
-	}
-
-	/**
-	 * This method is for setting a value in the Redis Database
-	 *
-	 * @return Response
-	 */
-	public function setRedisValue()
-	{
-		$value = (new Redis())->setValue('Kay', 'Freaking Genius');
-		
-		if ($value) return "done";
 	}
 }

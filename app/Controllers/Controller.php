@@ -45,7 +45,35 @@ class Controller{
 		//Call the middleware method
 		Middleware::$method();
 	}
+
+	/**
+	 * This is used to get the session value if it exists
+	 * 
+	 * @param  string $sessionName 
+	 * @return string
+	 */
+	public function getSession(string $sessionName)
+	{
+		if (Session::exists($sessionName)) {
+
+			$sessionValue = Session::get($sessionName);
+			
+			Session::destroy($sessionName);
+
+			return $sessionValue;
+		}else{
+			$sessionValue = false;
+
+			return $sessionValue;
+		}
+	}
 	
+	/**
+	 * This method is for redirecting URL's
+	 * 
+	 * @param  string $url 
+	 * @return response
+	 */
 	public function redirect(string $url)
 	{
 		//Redirect to the $url
