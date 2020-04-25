@@ -44,7 +44,7 @@ class Validator{
 				return false;
 			}
 
-			if (isset($request[$key]) && in_array("file", $value) && $request[$key]['type'] !=  ('image/png'||'image/pdf'||'image/jpg'||'image/jpeg') ) {
+			if (isset($request[$key]) && in_array("file", $value) && ( $request[$key]['type'] != 'image/png' &&  $request[$key]['type'] != 'image/pdf' &&  $request[$key]['type'] != 'image/jpg' &&  $request[$key]['type'] != 'image/jpeg') ) {
 				
 				Session::put("error","$key type must be a valid file type !");
 				return false;

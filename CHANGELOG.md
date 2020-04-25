@@ -17,3 +17,5 @@
 -- Added 3 methods to the Redis class namely checkIfExists, flushKeyValue & flushAllValues (11/04/2020)
 
 -- Changed the file path of the Seeding to the Config folder path (11/04/2020)
+
+-- Updated the validator class for file type (25/04/2020)
