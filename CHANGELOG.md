@@ -19,3 +19,5 @@
 -- Changed the file path of the Seeding to the Config folder path (11/04/2020)
 
 -- Updated the validator class for file type (25/04/2020)
+
+-- Added boolean type to the getDBType method (26/04/2020)

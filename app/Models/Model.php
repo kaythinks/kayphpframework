@@ -32,6 +32,11 @@ class Model extends Database implements ModelInterface{
 			return "DOUBLE(10,2) NOT NULL";
 		}
 
+		if ($data[$key] == "boolean"){
+
+			return "TINYINT(2) NOT NULL";
+		}
+
 		if($data[$key] == "timestamp") {
 			
 			return "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP";
