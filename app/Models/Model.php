@@ -37,6 +37,11 @@ class Model extends Database implements ModelInterface{
 			return "TINYINT(2) NOT NULL";
 		}
 
+		if ($data[$key] == "text"){
+			
+			return "LONGTEXT NOT NULL";
+		}
+
 		if($data[$key] == "timestamp") {
 			
 			return "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP";
