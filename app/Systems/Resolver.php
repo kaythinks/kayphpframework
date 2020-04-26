@@ -71,7 +71,7 @@ class Resolver {
 	 *
 	 * @throws Exception
 	 */
-	public function resolveNonClass(ReflectionParameter $parameter)
+	public function resolveNonClass(\ReflectionParameter $parameter)
 	{
 		if($parameter->isDefaultValueAvailable())
 		{
