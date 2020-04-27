@@ -265,6 +265,31 @@ class Database{
 		}
 	}
 
+	public function whereDataAll(string $model, string $query)
+	{
+		$model = new $model();
+		try{
+
+			$sql = "SELECT * FROM $model->table WHERE $query";
+			
+        	$data = $this->dbh->query($sql);
+        	
+        	$obj = $data->fetchAll(PDO::FETCH_ASSOC);
+
+        	$this->closeConnection();
+
+        	if(!$obj) return null;
+
+        	return $obj;
+
+		}catch(PDOException $e){
+
+			Logger::error($e);
+
+			throw new Exception( "There is some problem in connection: " . $e->getMessage() , 500);
+		}
+	}
+
 	public function checkWhereData(string $model, string $query)
 	{
 		$model = new $model();

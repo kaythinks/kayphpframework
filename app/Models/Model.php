@@ -145,7 +145,7 @@ class Model extends Database implements ModelInterface{
 	}
 
 	/**
-	 * This method is running a DB Query with the WHERE clause
+	 * This method is running a DB Query with the WHERE clause for single data
 	 * 
 	 * @param  mixed $query 
 	 * @param  mixed $data  
@@ -159,6 +159,23 @@ class Model extends Database implements ModelInterface{
 		
 		return ( new Database() )->whereData($model,$query);
 	}
+
+	/**
+	 * This method is running a DB Query with the WHERE clause for all data
+	 * 
+	 * @param  mixed $query 
+	 * @param  mixed $data  
+	 * @return Response
+	 */
+	public static function whereAll($query,$data)
+	{
+		$query = "$query = '$data'";
+		
+		$model = get_called_class();
+		
+		return ( new Database() )->whereDataAll($model,$query);
+	}
+
 
 	/**
 	 * This method is running a DB Query with the WHERE clause
