@@ -47,6 +47,36 @@ class Model extends Database implements ModelInterface{
 			return "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP";
 		}
 
+		if ($data[$key] == "string:nullable") {
+
+			return "VARCHAR(191)";
+		}
+
+		if ($data[$key] == "integer:nullable") {
+
+			return "INT(11)";
+		}
+
+		if($data[$key] == "float:nullable"){
+
+			return "DOUBLE(10,2)";
+		}
+
+		if ($data[$key] == "boolean:nullable"){
+
+			return "TINYINT(2)";
+		}
+
+		if ($data[$key] == "text:nullable"){
+			
+			return "LONGTEXT";
+		}
+
+		if($data[$key] == "timestamp:nullable") {
+			
+			return "TIMESTAMP";
+		}
+
 		if ($data[$key] == "string:unique") {
 
 			return "VARCHAR(191) NOT NULL UNIQUE";
