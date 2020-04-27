@@ -196,6 +196,13 @@ class Database{
 		    	}
 		    }
 
+		    //Add nullable data
+		    foreach ($explodedDatas as $key => $value) {
+		    	if (!$request->exists($value) ) {
+		    		$request->put($value,null);
+		    	}
+		    }
+
 		    // inserting a record
 		    $stmt->execute($request->all());
 
@@ -342,6 +349,13 @@ class Database{
 		    foreach ($request->all() as $key => $req) {
 		    	if (!in_array($key, $explodedDatas) ) {
 		    		unset($_REQUEST[$key]);
+		    	}
+		    }
+
+		    //Add nullable data
+		    foreach ($explodedDatas as $key => $value) {
+		    	if (!$request->exists($value) ) {
+		    		$request->put($value,null);
 		    	}
 		    }
 			
