@@ -19,7 +19,7 @@ Router::get('/forgotpassword','HomeController@forgotPassword');
 //Profile Page
 Router::get('/dashboard', 'DashboardController@home');
 Router::get('/updateprofile/{id}','DashboardController@getSingleProfile');
-Router::get('/deleteprofile','DashboardController@deleteProfile');
+Router::get('/deleteprofile/{id}','DashboardController@deleteProfile');
 Router::get('/logout', 'DashboardController@logout');
 
 

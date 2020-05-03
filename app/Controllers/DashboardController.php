@@ -100,13 +100,7 @@ class DashboardController extends Controller{
 	 */
 	public function deleteProfile()
 	{
-		$id = Session::get('data')['id'];
-
-		$data = User::find($id);
-
-		$all = Request::push($data);
-
-		User::delete((new Request() ));
+		User::delete($request);
 
 		$this->logout();
 
