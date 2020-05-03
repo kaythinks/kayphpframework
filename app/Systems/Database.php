@@ -451,6 +451,26 @@ class Database{
 		}
 	}
 
+	public function rawQueryDB(string $query)
+	{
+		try{
+			$sth = $this->dbh->prepare($query);
+
+			$sth->execute();
+			
+			$this->closeConnection();
+
+			return true;
+
+		}catch(PDOException $e){
+
+			Logger::error($e);
+			
+			echo "There is some problem in connection: " . $e->getMessage();
+		}
+	}
+
+
 	public function rawQueryAll(string $query)
 	{
 		try{

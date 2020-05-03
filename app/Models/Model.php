@@ -240,4 +240,15 @@ class Model extends Database implements ModelInterface{
 	{
 		return ( new Database() )->rawQueryAll($query);
 	}
+
+	/**
+	 * This method is for writing raw queries to the Database
+	 * 
+	 * @param  string $query 
+	 * @return Response
+	 */
+	public static function rawQuery(string $query)
+	{
+		return ( new Database() )->rawQueryDB($query);
+	}
 }
