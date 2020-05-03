@@ -299,7 +299,7 @@ class Database{
 			
         	$data = $this->dbh->query($sql);
         	
-        	$obj = $data->fetch();
+        	$obj = $data->fetch(PDO::FETCH_ASSOC);
         	
         	$this->closeConnection();
 
@@ -324,7 +324,7 @@ class Database{
 
         	$data = $this->dbh->query($sql);
 
-        	$obj = $data->fetch();
+        	$obj = $data->fetch(PDO::FETCH_ASSOC);
         	
         	$this->closeConnection();
 
@@ -348,7 +348,7 @@ class Database{
 			$check = "SELECT * FROM $model->table WHERE ID = $id";
         	$checking = $this->dbh->query($check);
         	
-        	$obj = $checking->fetch();
+        	$obj = $checking->fetch(PDO::FETCH_ASSOC);
 
         	if(!$obj) throw new PDOException("ID does not exist in the Database!", 404);
 
@@ -407,7 +407,7 @@ class Database{
 			$check = "SELECT * FROM $model->table WHERE ID = $id";
         	$checking = $this->dbh->query($check);
         	
-        	$obj = $checking->fetch();
+        	$obj = $checking->fetch(PDO::FETCH_ASSOC);
 
         	if(!$obj ) throw new PDOException("ID does not exist in the Database!", 1);
 
