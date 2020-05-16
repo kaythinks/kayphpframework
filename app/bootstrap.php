@@ -26,7 +26,7 @@ try {
 	require 'Route.php';
 
 	// Handling non-existent routes
-	if (isset($_SESSION['urls']) && !in_array($_SERVER['REQUEST_URI'],$_SESSION['urls']) && $_SERVER['REQUEST_URI'] !== '/') {	
+	if (isset($_SESSION['urls']) && !in_array( parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ,$_SESSION['urls']) && $_SERVER['REQUEST_URI'] !== '/') {	
 		$_SESSION['urls'] = [];
 		error_log(" # ".date('l jS \of F Y h:i:s A')." :- This route ".$_SERVER['REQUEST_URI']." doesn't exist in your Application !\r\n", 3, 'error.log');
 		readfile('app/views/errors/404.php');
