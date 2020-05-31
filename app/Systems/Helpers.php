@@ -130,3 +130,11 @@ if (!function_exists('fatal_handler')) {
 	}
 }
 
+if (!function_exists('response')) {
+	function response($response, $status_code = 200)
+	{
+		http_response_code($tatus_code);
+		echo $response;
+	}
+}
+

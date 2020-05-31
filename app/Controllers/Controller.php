@@ -27,7 +27,20 @@ class Controller{
 		//Check if the request is an API request
 		$isApi = is_api();
 
-		if ( ($_SERVER['REQUEST_METHOD'] == "POST" && !isset($_REQUEST['csrf_token']) && !$isApi || isset($_REQUEST['csrf_token']) && !$isApi && $_SESSION['csrf'] !== $_REQUEST['csrf_token']) ) throw new Exception("Token mismatch", 500);
+		if ( ($_SERVER['REQUEST_METHOD'] == "POST" && !isset($_REQUEST['csrf_token']) && !$isApi || isset($_REQUEST['csrf_token']) && !$isApi && $_SESSION['csrf'] !== $_REQUEST['csrf_token']) ){
+			if (Env::ENVIRONMENT === "production") {
+				echo "<script type='text/JavaScript'>
+				let answer = window.confirm('Session expired ! Click OK to refresh');
+
+	        	if(answer) window.history.back();
+				  </script>";
+
+				die();  
+			}else{
+				throw new Exception("Token Mismatch!", 500);
+				
+			}
+		}
 
 		//Prevent login or register access if authenticated
 		if ( ($_SERVER['REQUEST_URI'] == '/login' || $_SERVER['REQUEST_URI'] == '/register' || $_SERVER['REQUEST_URI'] == '/forgotpassword') && isset($_SESSION['auth']) ) echo "<script type='text/JavaScript'> window.location.href ='/dashboard'; </script>";

@@ -39,5 +39,5 @@ class EnvExample {
 	const RABBITMQ_PORT = 5672;
 	const RABBITMQ_USERNAME = "guest";
 	const RABBITMQ_PASSWORD = "guest";
-
+	const ENVIRONMENT = "testing"; //"testing" or "production"
 }
