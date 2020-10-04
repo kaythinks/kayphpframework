@@ -21,3 +21,5 @@
 -- Updated the validator class for file type (25/04/2020)
 
 -- Added boolean type to the getDBType method (26/04/2020)
+
+-- Updated the routing resolver class (04/10/2020)

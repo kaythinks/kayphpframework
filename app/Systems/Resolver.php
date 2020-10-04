@@ -2,6 +2,8 @@
 
 namespace App\Systems;
 
+use Exception;
+
 class Resolver {
 
 	/**
@@ -78,6 +80,6 @@ class Resolver {
 			return $parameter->getDefaultValue();
 		}
 		
-		throw new Exception("Erm.. Cannot resolve the unkown!?");
+		throw new Exception("Erm.. Cannot resolve the unknown!?");
 	}
 }
