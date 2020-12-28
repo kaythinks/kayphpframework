@@ -23,3 +23,5 @@
 -- Added boolean type to the getDBType method (26/04/2020)
 
 -- Updated the routing resolver class (04/10/2020)
+
+-- Updated the PHP version to accomodate PHP 8 (27/12/2020)
