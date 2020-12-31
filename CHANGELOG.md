@@ -25,3 +25,5 @@
 -- Updated the routing resolver class (04/10/2020)
 
 -- Updated the PHP version to accomodate PHP 8 (27/12/2020)
+
+-- Updated the redirect and added a route method (31/12/2020)

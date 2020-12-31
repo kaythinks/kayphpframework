@@ -90,6 +90,18 @@ class Controller{
 	public function redirect(string $url)
 	{
 		//Redirect to the $url
-		echo "<script type='text/JavaScript'> window.location.href ='".$url."'</script>";
+		return header('Location: '.$url);
+	}
+
+	/**
+	 * This method returns the specified route
+	 * 
+	 * @param  string $url 
+	 * @return Response
+	 */
+	public function route(string $url)
+	{
+		//Redirect to the $url
+		return header('Location: '.$url);
 	}
 }
