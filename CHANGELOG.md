@@ -29,3 +29,5 @@
 -- Updated the redirect and added a route method (31/12/2020)
 
 -- Updated the middleware class method to handle non existent methods (01/01/2021)
+
+-- Updated header status for non-existent routes (14/11/2023)
