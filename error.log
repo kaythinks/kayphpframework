@@ -1,0 +1,10 @@
+ # Tuesday 14th of November 2023 02:19:38 PM :-This Error ' Class "App\Config\Env" not found ' with status code 0 occured on line 39 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Helpers.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(19): session_time_counter()
+#1 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#2 {main}!
+ # Tuesday 14th of November 2023 02:19:38 PM :-This Error ' Class "App\Config\Env" not found ' with status code 0 occured on line 47 of file/Library/WebServer/Documents/kayphpframework/app/bootstrap.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/index.php(3): require()
+#1 {main}!
+ # Tuesday 14th of November 2023 02:19:58 PM :-This Error ' Class "App\Config\Env" not found ' with status code 0 occured on line 39 of file/Library/WebServer/Documents/kayphpframework/app/Systems/Helpers.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/app/bootstrap.php(19): session_time_counter()
+#1 /Library/WebServer/Documents/kayphpframework/index.php(3): require('/Library/WebSer...')
+#2 {main}!
+ # Tuesday 14th of November 2023 02:19:58 PM :-This Error ' Class "App\Config\Env" not found ' with status code 0 occured on line 47 of file/Library/WebServer/Documents/kayphpframework/app/bootstrap.php STACKTRACE #0 /Library/WebServer/Documents/kayphpframework/index.php(3): require()
+#1 {main}!
